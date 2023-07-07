@@ -37,7 +37,7 @@ class CustomTextInput extends StatelessWidget {
                   top: const BorderSide(color: Color(0xff5c5c5c), width: 0),
                   right: const BorderSide(color: Color(0xff5c5c5c), width: 0),
                 )),
-            height: 60.h,
+            height: 55.h,
             child: TextFormField(
               controller: controller.value,
               autovalidateMode: AutovalidateMode.onUserInteraction,

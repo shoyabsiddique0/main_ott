@@ -44,6 +44,23 @@ class LoginScreen extends StatelessWidget {
                   inputType: TextInputType.visiblePassword,
                   validateFunc: controller.validatePassword,
                 ),
+                Padding(
+                  padding: EdgeInsets.only(right: 24.w),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      GestureDetector(
+                          onTap: () {},
+                          child: Text(
+                            "Forgot Passowrd?",
+                            style: GoogleFonts.poppins(
+                                color: primaryColor,
+                                fontWeight: FontWeight.w600,
+                                decoration: TextDecoration.underline),
+                          )),
+                    ],
+                  ),
+                ),
                 SizedBox(
                   height: 30.h,
                 ),
@@ -52,7 +69,9 @@ class LoginScreen extends StatelessWidget {
                     height: 50.h,
                     padding: EdgeInsets.only(left: 24.w, right: 24.w),
                     child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Get.toNamed("/bottomNavigationScreen");
+                        },
                         style: ElevatedButton.styleFrom(
                             backgroundColor: primaryColor),
                         child: Text(
@@ -67,16 +86,20 @@ class LoginScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "New Here?",
+                      "New Here? ",
                       style: GoogleFonts.poppins(
                           color: whiteColor, fontWeight: FontWeight.w400),
                     ),
-                    TextButton(
-                        onPressed: () {},
+                    GestureDetector(
+                        onTap: () {
+                          Get.toNamed("/registerScreen");
+                        },
                         child: Text(
                           "Register",
                           style: GoogleFonts.poppins(
-                              color: primaryColor, fontWeight: FontWeight.w400),
+                              color: primaryColor,
+                              fontWeight: FontWeight.w400,
+                              decoration: TextDecoration.underline),
                         ))
                   ],
                 )
