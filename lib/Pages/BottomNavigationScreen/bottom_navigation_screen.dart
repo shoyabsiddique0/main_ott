@@ -18,15 +18,23 @@ class BottomNavigationScreen extends StatelessWidget {
             items: [
               BottomNavigationBarItem(
                   icon: SvgPicture.asset("assets/NavBarAssets/home.svg"),
-                  label: "Home"),
+                  label: "Home",
+                  activeIcon:
+                      SvgPicture.asset("assets/NavBarAssets/activeHome.svg")),
               BottomNavigationBarItem(
                   icon: SvgPicture.asset("assets/NavBarAssets/category.svg"),
+                  activeIcon: SvgPicture.asset(
+                      "assets/NavBarAssets/activeCategory.svg"),
                   label: "Category"),
               BottomNavigationBarItem(
                   icon: SvgPicture.asset("assets/NavBarAssets/search.svg"),
+                  activeIcon:
+                      SvgPicture.asset("assets/NavBarAssets/activeSearch.svg"),
                   label: "Search"),
               BottomNavigationBarItem(
                   icon: SvgPicture.asset("assets/NavBarAssets/profile.svg"),
+                  activeIcon:
+                      SvgPicture.asset("assets/NavBarAssets/activeProfile.svg"),
                   label: "Profile"),
             ],
             type: BottomNavigationBarType.fixed,

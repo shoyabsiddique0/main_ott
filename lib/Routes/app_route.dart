@@ -6,4 +6,6 @@ class AppRoutes {
   static const profileScreen = '/profileScreen';
   static const searchScreeen = '/searchScreen';
   static const bottomNavigationScreen = '/bottomNavigationScreen';
+  static const forgotPasswordScreen = '/forgotPasswordScreen';
+  static const otpScreen = '/otpScreen';
 }

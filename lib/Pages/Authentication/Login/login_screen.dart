@@ -34,6 +34,17 @@ class LoginScreen extends StatelessWidget {
                   controller: controller.phoneController,
                   inputType: TextInputType.phone,
                   validateFunc: controller.validateMobile,
+                  prefix: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "+91 | ",
+                        style: GoogleFonts.poppins(
+                            color: whiteColor.withOpacity(0.30),
+                            fontSize: 14.w),
+                      ),
+                    ],
+                  ),
                 ),
                 SizedBox(
                   height: 24.h,
@@ -50,7 +61,9 @@ class LoginScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            Get.toNamed("/forgotPasswordScreen");
+                          },
                           child: Text(
                             "Forgot Passowrd?",
                             style: GoogleFonts.poppins(

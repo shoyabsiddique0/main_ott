@@ -9,12 +9,14 @@ class CustomTextInput extends StatelessWidget {
   final String hintText;
   final TextInputType inputType;
   final String Function(String) validateFunc;
+  Widget? prefix;
   CustomTextInput(
       {super.key,
       required this.controller,
       required this.hintText,
       required this.inputType,
-      required this.validateFunc});
+      required this.validateFunc,
+      this.prefix});
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +42,7 @@ class CustomTextInput extends StatelessWidget {
             height: 55.h,
             child: TextFormField(
               controller: controller.value,
-              autovalidateMode: AutovalidateMode.onUserInteraction,
+              // autovalidateMode: AutovalidateMode.onUserInteraction,
               obscureText: inputType == TextInputType.visiblePassword,
               style: GoogleFonts.poppins(color: Colors.white),
               expands: !(inputType == TextInputType.visiblePassword),
@@ -48,6 +50,7 @@ class CustomTextInput extends StatelessWidget {
               minLines: inputType == TextInputType.visiblePassword ? 1 : null,
               keyboardType: inputType,
               decoration: InputDecoration(
+                prefixIcon: prefix,
                 hintStyle:
                     GoogleFonts.poppins(color: whiteColor.withOpacity(0.25)),
                 hintText: hintText,
