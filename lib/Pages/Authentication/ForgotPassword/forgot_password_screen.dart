@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:main_ott/Pages/Authentication/ForgotPassword/forgot_password_controller.dart';
+import 'package:main_ott/Routes/app_route.dart';
 import 'package:main_ott/Theme/colors.dart';
 import 'package:main_ott/Widgets/AuthWidget/custom_text_input.dart';
 
@@ -65,7 +66,7 @@ class ForgotPasswordScreen extends StatelessWidget {
             height: 40.h,
             child: ElevatedButton(
               onPressed: () {
-                Get.toNamed("/otpScreen");
+                Get.toNamed(AppRoutes.otpScreen);
               },
               style: ElevatedButton.styleFrom(backgroundColor: primaryColor),
               child: Text(

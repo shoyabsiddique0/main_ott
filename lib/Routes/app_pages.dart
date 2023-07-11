@@ -13,6 +13,8 @@ import 'package:main_ott/Pages/Authentication/ForgotPassword/forgot_password_bin
 import 'package:main_ott/Pages/Authentication/ForgotPassword/forgot_password_screen.dart';
 import 'package:main_ott/Pages/Home/home_binding.dart';
 import 'package:main_ott/Pages/Home/home_screen.dart';
+import 'package:main_ott/Pages/Profile/AccountSetting/account_setting_binding.dart';
+import 'package:main_ott/Pages/Profile/AccountSetting/account_setting_screen.dart';
 import 'package:main_ott/Pages/Profile/profile_binding.dart';
 import 'package:main_ott/Pages/Profile/profile_screen.dart';
 import 'package:main_ott/Pages/Search/search_binding.dart';
@@ -65,6 +67,11 @@ class AppPages {
         name: AppRoutes.otpScreen,
         page: () => const OtpScreen(),
         binding: OtpBinding(),
+        transition: Transition.rightToLeft),
+    GetPage(
+        name: AppRoutes.accountSetting,
+        page: () => const AccountSettingScreen(),
+        binding: AccountSettingBinding(),
         transition: Transition.rightToLeft),
   ];
 }

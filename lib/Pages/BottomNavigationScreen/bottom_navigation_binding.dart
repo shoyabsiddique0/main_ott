@@ -11,7 +11,7 @@ class BottomNavigationBinding extends Bindings {
     Get.lazyPut(() => BottomNavigationController());
     Get.lazyPut(() => HomeController());
     Get.lazyPut(() => CategoryController());
-    Get.lazyPut(() => SearchController());
+    Get.lazyPut(() => SearchScreenController());
     Get.lazyPut(() => ProfileController());
   }
 }

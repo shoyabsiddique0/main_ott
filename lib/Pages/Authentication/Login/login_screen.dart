@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:main_ott/Pages/Authentication/Login/login_controller.dart';
+import 'package:main_ott/Routes/app_route.dart';
 import 'package:main_ott/Theme/colors.dart';
 import 'package:main_ott/Widgets/AuthWidget/custom_text_input.dart';
 
@@ -62,7 +63,7 @@ class LoginScreen extends StatelessWidget {
                     children: [
                       GestureDetector(
                           onTap: () {
-                            Get.toNamed("/forgotPasswordScreen");
+                            Get.toNamed(AppRoutes.forgotPasswordScreen);
                           },
                           child: Text(
                             "Forgot Passowrd?",
@@ -83,7 +84,7 @@ class LoginScreen extends StatelessWidget {
                     padding: EdgeInsets.only(left: 24.w, right: 24.w),
                     child: ElevatedButton(
                         onPressed: () {
-                          Get.toNamed("/bottomNavigationScreen");
+                          Get.toNamed(AppRoutes.bottomNavigationScreen);
                         },
                         style: ElevatedButton.styleFrom(
                             backgroundColor: primaryColor),
@@ -105,7 +106,7 @@ class LoginScreen extends StatelessWidget {
                     ),
                     GestureDetector(
                         onTap: () {
-                          Get.toNamed("/registerScreen");
+                          Get.toNamed(AppRoutes.registerScreen);
                         },
                         child: Text(
                           "Register",

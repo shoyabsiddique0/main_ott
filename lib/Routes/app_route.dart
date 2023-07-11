@@ -8,4 +8,5 @@ class AppRoutes {
   static const bottomNavigationScreen = '/bottomNavigationScreen';
   static const forgotPasswordScreen = '/forgotPasswordScreen';
   static const otpScreen = '/otpScreen';
+  static const accountSetting = '/accountSetting';
 }

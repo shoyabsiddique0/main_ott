@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:main_ott/Pages/Authentication/OTP/otp_controller.dart';
@@ -120,7 +119,7 @@ class OtpScreen extends StatelessWidget {
                 () => TextButton(
                   onPressed: controller.start.value == 0
                       ? () {
-                          Get.toNamed("/forgotPasswordScreen");
+                          Get.back();
                         }
                       : null,
                   child: Text(

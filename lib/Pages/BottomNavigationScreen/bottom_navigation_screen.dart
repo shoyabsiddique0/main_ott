@@ -32,9 +32,15 @@ class BottomNavigationScreen extends StatelessWidget {
                       SvgPicture.asset("assets/NavBarAssets/activeSearch.svg"),
                   label: "Search"),
               BottomNavigationBarItem(
-                  icon: SvgPicture.asset("assets/NavBarAssets/profile.svg"),
-                  activeIcon:
-                      SvgPicture.asset("assets/NavBarAssets/activeProfile.svg"),
+                  icon: ClipRRect(
+                    borderRadius: BorderRadius.circular(24.w),
+                    child: SizedBox(
+                        height: 24.w,
+                        width: 24.w,
+                        child: Image.asset("assets/ProfileAssets/profile.png")),
+                  ),
+                  // activeIcon:
+                  //     SvgPicture.asset("assets/NavBarAssets/activeProfile.svg"),
                   label: "Profile"),
             ],
             type: BottomNavigationBarType.fixed,
