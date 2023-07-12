@@ -9,4 +9,7 @@ class AppRoutes {
   static const forgotPasswordScreen = '/forgotPasswordScreen';
   static const otpScreen = '/otpScreen';
   static const accountSetting = '/accountSetting';
+  static const subscriptionScreen = '/subscriptionScreen';
+  static const manageProfileScreen = '/manageProfileScreen';
+  static const detailsScreen = '/detailsScreen';
 }

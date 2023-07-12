@@ -35,6 +35,7 @@ class LoginScreen extends StatelessWidget {
                   controller: controller.phoneController,
                   inputType: TextInputType.phone,
                   validateFunc: controller.validateMobile,
+                  valText: controller.valMob,
                   prefix: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -48,13 +49,15 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 24.h,
+                  height: 6.h,
                 ),
                 CustomTextInput(
                   hintText: "Enter Password",
                   controller: controller.passController,
                   inputType: TextInputType.visiblePassword,
                   validateFunc: controller.validatePassword,
+                  valText: controller.valPass,
+                  isVisible: controller.isVisible,
                 ),
                 Padding(
                   padding: EdgeInsets.only(right: 24.w),
@@ -69,7 +72,7 @@ class LoginScreen extends StatelessWidget {
                             "Forgot Passowrd?",
                             style: GoogleFonts.poppins(
                                 color: primaryColor,
-                                fontWeight: FontWeight.w600,
+                                fontWeight: FontWeight.w500,
                                 decoration: TextDecoration.underline),
                           )),
                     ],
@@ -116,6 +119,9 @@ class LoginScreen extends StatelessWidget {
                               decoration: TextDecoration.underline),
                         ))
                   ],
+                ),
+                SizedBox(
+                  height: 25.h,
                 )
               ],
             ),

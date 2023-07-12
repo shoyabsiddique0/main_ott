@@ -49,6 +49,7 @@ class ForgotPasswordScreen extends StatelessWidget {
             hintText: "Enter Your Mobile Number",
             inputType: TextInputType.phone,
             validateFunc: forgotPasswordController.validateMobile,
+            valText: forgotPasswordController.valMob,
             prefix: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

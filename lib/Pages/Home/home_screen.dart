@@ -55,7 +55,7 @@ class HomeScreen extends StatelessWidget {
           height: 20,
         ),
         Header(
-          title: "Recently Started",
+          title: "Continue Watching",
           child: CarouselSlider(
               items: homeController.trendingList,
               options: CarouselOptions(
@@ -118,7 +118,7 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
         Header(
-          title: "Trending Now",
+          title: "Recently Added",
           child: CarouselSlider(
               items: homeController.trendingList,
               options: CarouselOptions(
@@ -170,6 +170,15 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
         ),
+        Header(
+            title: "Upcoming Series",
+            child: CarouselSlider(
+                items: homeController.recentList,
+                options: CarouselOptions(
+                    aspectRatio: 1.5.w,
+                    viewportFraction: 0.474.w,
+                    enableInfiniteScroll: false,
+                    padEnds: false))),
       ]),
     );
   }

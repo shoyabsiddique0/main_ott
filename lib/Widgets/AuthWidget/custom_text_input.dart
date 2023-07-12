@@ -1,21 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:main_ott/Theme/colors.dart';
 
 class CustomTextInput extends StatelessWidget {
-  Rx<TextEditingController> controller;
+  final Rx<TextEditingController> controller;
   final String hintText;
+  final RxString valText;
   final TextInputType inputType;
-  final String Function(String) validateFunc;
-  Widget? prefix;
-  CustomTextInput(
+  final void Function(String?) validateFunc;
+  final RxBool? isVisible;
+  final Widget? prefix;
+  const CustomTextInput(
       {super.key,
       required this.controller,
       required this.hintText,
       required this.inputType,
       required this.validateFunc,
+      required this.valText,
+      this.isVisible,
       this.prefix});
 
   @override
@@ -39,45 +44,61 @@ class CustomTextInput extends StatelessWidget {
                   top: const BorderSide(color: Color(0xff5c5c5c), width: 0),
                   right: const BorderSide(color: Color(0xff5c5c5c), width: 0),
                 )),
-            height: 55.h,
-            child: TextFormField(
-              controller: controller.value,
-              // autovalidateMode: AutovalidateMode.onUserInteraction,
-              obscureText: inputType == TextInputType.visiblePassword,
-              style: GoogleFonts.poppins(color: Colors.white),
-              expands: !(inputType == TextInputType.visiblePassword),
-              maxLines: inputType == TextInputType.visiblePassword ? 1 : null,
-              minLines: inputType == TextInputType.visiblePassword ? 1 : null,
-              keyboardType: inputType,
-              decoration: InputDecoration(
-                prefixIcon: prefix,
-                hintStyle:
-                    GoogleFonts.poppins(color: whiteColor.withOpacity(0.25)),
-                hintText: hintText,
-                border: OutlineInputBorder(
-                    borderSide: const BorderSide(
-                        color: Colors.transparent, width: double.minPositive),
-                    borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(10.w),
-                        topRight: Radius.circular(10.w))),
-                focusedBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(
-                        color: Colors.transparent, width: double.minPositive),
-                    borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(10.w),
-                        topRight: Radius.circular(10.w))),
-                enabledBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(
-                        color: Colors.transparent, width: double.minPositive),
-                    borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(10.w),
-                        topRight: Radius.circular(10.w))),
+            height: 48.h,
+            child: Obx(
+              () => TextFormField(
+                controller: controller.value,
+                autovalidateMode: AutovalidateMode.onUserInteraction,
+                obscureText: inputType == TextInputType.visiblePassword
+                    ? isVisible!.value
+                    : false,
+                style: GoogleFonts.poppins(color: Colors.white),
+                expands: !(inputType == TextInputType.visiblePassword),
+                maxLines: inputType == TextInputType.visiblePassword ? 1 : null,
+                minLines: inputType == TextInputType.visiblePassword ? 1 : null,
+                keyboardType: inputType,
+                onChanged: (value) => validateFunc(value),
+                decoration: InputDecoration(
+                  isDense: true,
+                  suffixIcon: inputType == TextInputType.visiblePassword
+                      ? TextButton(
+                          onPressed: () {
+                            isVisible?.value = !isVisible!.value;
+                          },
+                          child: isVisible!.value
+                              ? SvgPicture.asset("assets/AuthAssets/eye.svg")
+                              : SvgPicture.asset(
+                                  "assets/AuthAssets/eye_open.svg"))
+                      : null,
+                  prefixIcon: prefix,
+                  hintStyle:
+                      GoogleFonts.poppins(color: whiteColor.withOpacity(0.25)),
+                  hintText: hintText,
+                  border: OutlineInputBorder(
+                      borderSide: const BorderSide(
+                          color: Colors.transparent, width: double.minPositive),
+                      borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(10.w),
+                          topRight: Radius.circular(10.w))),
+                  focusedBorder: OutlineInputBorder(
+                      borderSide: const BorderSide(
+                          color: Colors.transparent, width: double.minPositive),
+                      borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(10.w),
+                          topRight: Radius.circular(10.w))),
+                  enabledBorder: OutlineInputBorder(
+                      borderSide: const BorderSide(
+                          color: Colors.transparent, width: double.minPositive),
+                      borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(10.w),
+                          topRight: Radius.circular(10.w))),
+                ),
               ),
             ),
           ),
           Obx(
             () => Text(
-              validateFunc(controller.value.text),
+              valText.value,
               style: GoogleFonts.poppins(color: primaryColor),
             ),
           ),

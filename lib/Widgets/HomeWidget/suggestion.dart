@@ -107,17 +107,7 @@ class Suggestion extends StatelessWidget {
             )),
         Positioned(
             bottom: 18.h,
-            right: 115.w,
-            child: TextButton(
-              onPressed: () {},
-              style: TextButton.styleFrom(
-                backgroundColor: Colors.transparent,
-              ),
-              child: SvgPicture.asset("assets/HomeAssets/heart.svg"),
-            )),
-        Positioned(
-            bottom: 18.h,
-            right: 58.w,
+            right: 120.w,
             child: TextButton(
               onPressed: () {},
               style: TextButton.styleFrom(
@@ -127,7 +117,7 @@ class Suggestion extends StatelessWidget {
             )),
         Positioned(
             bottom: 18.h,
-            right: 1.w,
+            right: 60.w,
             child: TextButton(
               onPressed: () {},
               style: TextButton.styleFrom(

@@ -91,65 +91,69 @@ class ProfileScreen extends StatelessWidget {
                   SizedBox(
                     height: 16.h,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        children: [
-                          SvgPicture.asset(
-                            "assets/ProfileAssets/subscription.svg",
+                  InkWell(
+                    onTap: () => Get.toNamed(AppRoutes.subscriptionScreen),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            SvgPicture.asset(
+                              "assets/ProfileAssets/subscription.svg",
+                              width: 24.w,
+                              height: 24.h,
+                              fit: BoxFit.scaleDown,
+                            ),
+                            SizedBox(
+                              width: 16.w,
+                            ),
+                            ShaderMask(
+                              blendMode: BlendMode.srcIn,
+                              shaderCallback: (bounds) => const LinearGradient(
+                                      colors: [
+                                    // primaryColor,
+                                    Color(0xffC02739),
+                                    Color(0xffFF5B50),
+                                    // whiteColor
+                                  ],
+                                      begin: Alignment.topCenter,
+                                      end: Alignment.bottomCenter)
+                                  .createShader(
+                                Rect.fromLTWH(
+                                    0, 0, bounds.width, bounds.height),
+                              ),
+                              child: Text(
+                                "Subscription",
+                                style: GoogleFonts.poppins(
+                                    // color: whiteColor,
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 16.w),
+                              ),
+                            ),
+                          ],
+                        ),
+                        ShaderMask(
+                          blendMode: BlendMode.srcIn,
+                          shaderCallback: (bounds) => const LinearGradient(
+                                  colors: [
+                                // primaryColor,
+                                Color(0xffC02739),
+                                Color(0xffFF5B50),
+                                // whiteColor
+                              ],
+                                  begin: Alignment.topCenter,
+                                  end: Alignment.bottomCenter)
+                              .createShader(
+                            Rect.fromLTWH(0, 0, bounds.width, bounds.height),
+                          ),
+                          child: SvgPicture.asset(
+                            "assets/ProfileAssets/right.svg",
                             width: 24.w,
                             height: 24.h,
-                            fit: BoxFit.scaleDown,
                           ),
-                          SizedBox(
-                            width: 16.w,
-                          ),
-                          ShaderMask(
-                            blendMode: BlendMode.srcIn,
-                            shaderCallback: (bounds) => const LinearGradient(
-                                    colors: [
-                                  // primaryColor,
-                                  Color(0xffC02739),
-                                  Color(0xffFF5B50),
-                                  // whiteColor
-                                ],
-                                    begin: Alignment.topCenter,
-                                    end: Alignment.bottomCenter)
-                                .createShader(
-                              Rect.fromLTWH(0, 0, bounds.width, bounds.height),
-                            ),
-                            child: Text(
-                              "Subscription",
-                              style: GoogleFonts.poppins(
-                                  // color: whiteColor,
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 16.w),
-                            ),
-                          ),
-                        ],
-                      ),
-                      ShaderMask(
-                        blendMode: BlendMode.srcIn,
-                        shaderCallback: (bounds) => const LinearGradient(
-                                colors: [
-                              // primaryColor,
-                              Color(0xffC02739),
-                              Color(0xffFF5B50),
-                              // whiteColor
-                            ],
-                                begin: Alignment.topCenter,
-                                end: Alignment.bottomCenter)
-                            .createShader(
-                          Rect.fromLTWH(0, 0, bounds.width, bounds.height),
                         ),
-                        child: SvgPicture.asset(
-                          "assets/ProfileAssets/right.svg",
-                          width: 24.w,
-                          height: 24.h,
-                        ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                   SizedBox(
                     height: 16.h,
@@ -157,7 +161,7 @@ class ProfileScreen extends StatelessWidget {
                   ProfileList(
                     imageLink: "assets/ProfileAssets/manage.svg",
                     title: "Manage Profiles",
-                    onTap: () {},
+                    onTap: () => Get.toNamed(AppRoutes.manageProfileScreen),
                   ),
                   SizedBox(
                     height: 16.h,

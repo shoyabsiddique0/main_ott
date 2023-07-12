@@ -31,22 +31,35 @@ class RegisterScreen extends StatelessWidget {
                       fit: BoxFit.fill,
                     )),
                 SizedBox(
-                  height: 10.h,
+                  height: 25.h,
+                ),
+                CustomTextInput(
+                  hintText: "Enter Your Name",
+                  controller: controller.nameController,
+                  inputType: TextInputType.name,
+                  validateFunc: controller.validateName,
+                  valText: controller.valName,
+                ),
+                SizedBox(
+                  height: 6.h,
                 ),
                 CustomTextInput(
                   hintText: "Enter Phone Number",
                   controller: controller.phoneController,
                   inputType: TextInputType.phone,
                   validateFunc: controller.validateMobile,
+                  valText: controller.valMob,
                 ),
                 SizedBox(
-                  height: 10.h,
+                  height: 6.h,
                 ),
                 CustomTextInput(
                   hintText: "Enter Password",
                   controller: controller.passController,
                   inputType: TextInputType.visiblePassword,
                   validateFunc: controller.validatePassword,
+                  valText: controller.valPass,
+                  isVisible: controller.isVisible,
                 ),
                 SizedBox(
                   height: 20.h,
@@ -65,7 +78,7 @@ class RegisterScreen extends StatelessWidget {
                               fontSize: 16.w, fontWeight: FontWeight.w500),
                         ))),
                 SizedBox(
-                  height: 30.h,
+                  height: 25.h,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -94,7 +107,7 @@ class RegisterScreen extends StatelessWidget {
                   ],
                 ),
                 SizedBox(
-                  height: 30.h,
+                  height: 25.h,
                 ),
                 Container(
                     width: double.infinity,
@@ -143,6 +156,9 @@ class RegisterScreen extends StatelessWidget {
                               decoration: TextDecoration.underline),
                         ))
                   ],
+                ),
+                SizedBox(
+                  height: 25.h,
                 )
               ],
             ),

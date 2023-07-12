@@ -41,7 +41,7 @@ class EditProfile extends StatelessWidget {
             ],
           ),
           SvgPicture.asset(
-            "assets/ProfileAssets/AccountSetting/EditProfileedit.svg",
+            "assets/ProfileAssets/AccountSetting/edit.svg",
             width: 24.w,
             height: 24.h,
           ),

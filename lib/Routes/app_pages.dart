@@ -11,10 +11,16 @@ import 'package:main_ott/Pages/Category/category_binding.dart';
 import 'package:main_ott/Pages/Category/category_screen.dart';
 import 'package:main_ott/Pages/Authentication/ForgotPassword/forgot_password_binding.dart';
 import 'package:main_ott/Pages/Authentication/ForgotPassword/forgot_password_screen.dart';
+import 'package:main_ott/Pages/Home/DetailsScreen/details_bindng.dart';
+import 'package:main_ott/Pages/Home/DetailsScreen/details_screen.dart';
 import 'package:main_ott/Pages/Home/home_binding.dart';
 import 'package:main_ott/Pages/Home/home_screen.dart';
 import 'package:main_ott/Pages/Profile/AccountSetting/account_setting_binding.dart';
 import 'package:main_ott/Pages/Profile/AccountSetting/account_setting_screen.dart';
+import 'package:main_ott/Pages/Profile/ManageProfiles/manage_profile_binding.dart';
+import 'package:main_ott/Pages/Profile/ManageProfiles/manage_profile_screen.dart';
+import 'package:main_ott/Pages/Profile/Subscription/subscription_binding.dart';
+import 'package:main_ott/Pages/Profile/Subscription/subscription_screen.dart';
 import 'package:main_ott/Pages/Profile/profile_binding.dart';
 import 'package:main_ott/Pages/Profile/profile_screen.dart';
 import 'package:main_ott/Pages/Search/search_binding.dart';
@@ -72,6 +78,21 @@ class AppPages {
         name: AppRoutes.accountSetting,
         page: () => const AccountSettingScreen(),
         binding: AccountSettingBinding(),
+        transition: Transition.rightToLeft),
+    GetPage(
+        name: AppRoutes.subscriptionScreen,
+        page: () => const SubscriptionScreen(),
+        binding: SubscriptionBinding(),
+        transition: Transition.rightToLeft),
+    GetPage(
+        name: AppRoutes.manageProfileScreen,
+        page: () => const ManageProfileScreen(),
+        binding: ManageProfileBinding(),
+        transition: Transition.rightToLeft),
+    GetPage(
+        name: AppRoutes.detailsScreen,
+        page: () => const DetailsScreen(),
+        binding: DetailsBinding(),
         transition: Transition.rightToLeft),
   ];
 }

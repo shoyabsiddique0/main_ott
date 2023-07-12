@@ -17,19 +17,14 @@ class BottomNavigationScreen extends StatelessWidget {
       bottomNavigationBar: Obx(() => BottomNavigationBar(
             items: [
               BottomNavigationBarItem(
-                  icon: SvgPicture.asset("assets/NavBarAssets/home.svg"),
-                  label: "Home",
-                  activeIcon:
-                      SvgPicture.asset("assets/NavBarAssets/activeHome.svg")),
+                icon: SvgPicture.asset("assets/NavBarAssets/home.svg"),
+                label: "Home",
+              ),
               BottomNavigationBarItem(
                   icon: SvgPicture.asset("assets/NavBarAssets/category.svg"),
-                  activeIcon: SvgPicture.asset(
-                      "assets/NavBarAssets/activeCategory.svg"),
                   label: "Category"),
               BottomNavigationBarItem(
                   icon: SvgPicture.asset("assets/NavBarAssets/search.svg"),
-                  activeIcon:
-                      SvgPicture.asset("assets/NavBarAssets/activeSearch.svg"),
                   label: "Search"),
               BottomNavigationBarItem(
                   icon: ClipRRect(
@@ -46,21 +41,22 @@ class BottomNavigationScreen extends StatelessWidget {
             type: BottomNavigationBarType.fixed,
             backgroundColor: blackColor,
             currentIndex: bottomNavigationController.pageIndex.value,
-            selectedItemColor: primaryColor,
+            selectedItemColor: whiteColor,
             unselectedItemColor: hintTextColor,
             selectedFontSize: 12.sp,
             unselectedFontSize: 12.sp,
             onTap: (int index) {
               bottomNavigationController.pageIndex.value = index;
             },
+            showUnselectedLabels: false,
             selectedLabelStyle: GoogleFonts.poppins(
-                color: primaryColor,
+                color: whiteColor,
                 fontSize: 12.sp,
                 fontWeight: FontWeight.w500),
-            unselectedLabelStyle: GoogleFonts.poppins(
-                color: Color(0xff5d5d5d),
-                fontSize: 12.sp,
-                fontWeight: FontWeight.w500),
+            // unselectedLabelStyle: GoogleFonts.poppins(
+            //     color: Color(0xff5d5d5d),
+            //     fontSize: 12.sp,
+            //     fontWeight: FontWeight.w500),
           )),
       body: Obx(() => bottomNavigationController
           .pages[bottomNavigationController.pageIndex.value]),
