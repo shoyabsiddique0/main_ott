@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 class RegisterController extends GetxController {
@@ -10,6 +11,12 @@ class RegisterController extends GetxController {
   var valName = "".obs;
   var isVisible = true.obs;
   GlobalKey formKey = GlobalKey();
+  @override
+  void onInit() {
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+    super.onInit();
+  }
+
   void validatePassword(String? value) {
     RegExp regex =
         RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$');

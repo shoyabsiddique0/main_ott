@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:main_ott/Routes/app_route.dart';
 import 'package:main_ott/Widgets/HomeWidget/cardView.dart';
@@ -10,6 +11,12 @@ class HomeController extends GetxController {
   final current = 0.obs;
   final collection1 = 0.obs;
   final collection2 = 0.obs;
+  @override
+  void onInit() {
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+    super.onInit();
+  }
+
   final suggestionList = <Widget>[
     const Suggestion(
         imageLink: "assets/HomeAssets/suggestionCard.png",
@@ -30,76 +37,76 @@ class HomeController extends GetxController {
   ].obs;
   final recentList = <Widget>[
     CardView(
-      action: () {},
+      // action: () {},
       name: "50 Shades of Grey",
       duration: "2hrs 30mins",
       image: "assets/HomeAssets/card2.png",
-      // action: () => Get.toNamed(AppRoutes.detailsScreen),
+      action: () => Get.toNamed(AppRoutes.detailsScreen),
     ),
     CardView(
-      action: () {},
+      // action: () {},
       name: "50 Shades of Grey",
       duration: "2hrs 30mins",
       image: "assets/HomeAssets/card2.png",
-      // action: () => Get.toNamed(AppRoutes.detailsScreen),
+      action: () => Get.toNamed(AppRoutes.detailsScreen),
     ),
     CardView(
-      action: () {},
+      // action: () {},
       name: "50 Shades of Grey",
       duration: "2hrs 30mins",
       image: "assets/HomeAssets/card2.png",
-      // action: () => Get.toNamed(AppRoutes.detailsScreen),
+      action: () => Get.toNamed(AppRoutes.detailsScreen),
     ),
     CardView(
-      action: () {},
+      // action: () {},
       name: "50 Shades of Grey",
       duration: "2hrs 30mins",
       image: "assets/HomeAssets/card2.png",
-      // action: () => Get.toNamed(AppRoutes.detailsScreen),
+      action: () => Get.toNamed(AppRoutes.detailsScreen),
     ),
     CardView(
-      action: () {},
+      // action: () {},
       name: "50 Shades of Grey",
       duration: "2hrs 30mins",
       image: "assets/HomeAssets/card2.png",
-      // action: () => Get.toNamed(AppRoutes.detailsScreen),
+      action: () => Get.toNamed(AppRoutes.detailsScreen),
     ),
   ].obs;
   final trendingList = <Widget>[
     CardView(
-      action: () {},
+      // action: () {},
       name: "Harley Quinn",
       duration: "2hrs 30mins",
       image: "assets/HomeAssets/card1.png",
-      // action: () => Get.toNamed(AppRoutes.detailsScreen),
+      action: () => Get.toNamed(AppRoutes.detailsScreen),
     ),
     CardView(
-      action: () {},
+      // action: () {},
       name: "Harley Quinn",
       duration: "2hrs 30mins",
       image: "assets/HomeAssets/card1.png",
-      // action: () => Get.toNamed(AppRoutes.detailsScreen),
+      action: () => Get.toNamed(AppRoutes.detailsScreen),
     ),
     CardView(
-      action: () {},
+      // action: () {},
       name: "Harley Quinn",
       duration: "2hrs 30mins",
       image: "assets/HomeAssets/card1.png",
-      // action: () => Get.toNamed(AppRoutes.detailsScreen),
+      action: () => Get.toNamed(AppRoutes.detailsScreen),
     ),
     CardView(
-      action: () {},
+      // action: () {},
       name: "Harley Quinn",
       duration: "2hrs 30mins",
       image: "assets/HomeAssets/card1.png",
-      // action: () => Get.toNamed(AppRoutes.detailsScreen),
+      action: () => Get.toNamed(AppRoutes.detailsScreen),
     ),
     CardView(
-      action: () {},
+      // action: () {},
       name: "Harley Quinn",
       duration: "2hrs 30mins",
       image: "assets/HomeAssets/card1.png",
-      // action: () => Get.toNamed(AppRoutes.detailsScreen),
+      action: () => Get.toNamed(AppRoutes.detailsScreen),
     ),
   ].obs;
   List<Image> collectionList1 = [

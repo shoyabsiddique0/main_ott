@@ -13,8 +13,12 @@ import 'package:main_ott/Pages/Authentication/ForgotPassword/forgot_password_bin
 import 'package:main_ott/Pages/Authentication/ForgotPassword/forgot_password_screen.dart';
 import 'package:main_ott/Pages/Home/DetailsScreen/details_bindng.dart';
 import 'package:main_ott/Pages/Home/DetailsScreen/details_screen.dart';
+import 'package:main_ott/Pages/Home/Video_Screen/video_screen.dart';
+import 'package:main_ott/Pages/Home/Video_Screen/video_screen_binding.dart';
 import 'package:main_ott/Pages/Home/home_binding.dart';
 import 'package:main_ott/Pages/Home/home_screen.dart';
+import 'package:main_ott/Pages/Home/landscapeVideo/landscape_binding.dart';
+import 'package:main_ott/Pages/Home/landscapeVideo/landscape_player.dart';
 import 'package:main_ott/Pages/Profile/AccountSetting/account_setting_binding.dart';
 import 'package:main_ott/Pages/Profile/AccountSetting/account_setting_screen.dart';
 import 'package:main_ott/Pages/Profile/ManageProfiles/manage_profile_binding.dart';
@@ -94,5 +98,15 @@ class AppPages {
         page: () => const DetailsScreen(),
         binding: DetailsBinding(),
         transition: Transition.rightToLeft),
+    GetPage(
+        name: AppRoutes.videoScreen,
+        page: () => VideoScreen(),
+        binding: VideoScreenBinding(),
+        transition: Transition.rightToLeft),
+    GetPage(
+        name: AppRoutes.landscapeScreen,
+        page: () => LandscapePlayer(),
+        binding: LandscapeBinding(),
+        transition: Transition.noTransition),
   ];
 }

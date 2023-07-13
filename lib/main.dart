@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    WidgetsFlutterBinding.ensureInitialized();
     return ScreenUtilInit(
       builder: ((context, child) => GetMaterialApp(
             debugShowCheckedModeBanner: false,

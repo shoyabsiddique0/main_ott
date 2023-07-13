@@ -2,14 +2,20 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:main_ott/Pages/Home/DetailsScreen/details_controller.dart';
+import 'package:main_ott/Routes/app_route.dart';
+import 'package:main_ott/Theme/colors.dart';
 import 'package:main_ott/Widgets/HomeWidget/DetailsWidget/episode.dart';
+import 'package:main_ott/Widgets/HomeWidget/header.dart';
 
 class DetailsScreen extends StatelessWidget {
   const DetailsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    DetailsController detailsController = Get.find<DetailsController>();
     return Scaffold(
       backgroundColor: Color(0xff1b1c1c),
       body: SafeArea(
@@ -106,7 +112,7 @@ class DetailsScreen extends StatelessWidget {
                 ],
               ),
               Container(
-                  padding: EdgeInsets.only(left: 25.w),
+                  padding: EdgeInsets.only(left: 25.w, right: 25.w),
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -125,6 +131,170 @@ class DetailsScreen extends StatelessWidget {
                               color: const Color(0xbffff9f9),
                               fontSize: 10.w,
                               fontFamily: "Poppins"),
+                        ),
+                        SizedBox(
+                          height: 5.w,
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            Get.bottomSheet(Container(
+                              height: 800.h,
+                              padding: EdgeInsets.only(
+                                  left: 24.w, right: 24.w, top: 24.h),
+                              color: Color(0xff1c1b1b),
+                              child: SingleChildScrollView(
+                                  child: Column(
+                                children: [
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        "50 Shades of Grey",
+                                        style: GoogleFonts.poppins(
+                                            color: whiteColor,
+                                            fontSize: 20.w,
+                                            fontWeight: FontWeight.w500),
+                                      ),
+                                      GestureDetector(
+                                        onTap: () => Get.back(),
+                                        child: SvgPicture.asset(
+                                            "assets/HomeAssets/DetailsAssets/cross.svg"),
+                                      )
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    height: 24.h,
+                                  ),
+                                  Text(
+                                    "Screen Cast",
+                                    style: GoogleFonts.poppins(
+                                        color: whiteColor,
+                                        fontSize: 16.w,
+                                        decoration: TextDecoration.underline,
+                                        fontWeight: FontWeight.w500),
+                                  ),
+                                  SizedBox(
+                                    height: 10.h,
+                                  ),
+                                  Column(
+                                    children: detailsController.castList
+                                        .map((e) => Text(
+                                              e,
+                                              style: GoogleFonts.poppins(
+                                                  color: whiteColor,
+                                                  fontSize: 16.w),
+                                            ))
+                                        .toList(),
+                                  ),
+                                  SizedBox(
+                                    height: 20.h,
+                                  ),
+                                  Text(
+                                    "Director",
+                                    style: GoogleFonts.poppins(
+                                        color: whiteColor,
+                                        fontSize: 16.w,
+                                        decoration: TextDecoration.underline,
+                                        fontWeight: FontWeight.w500),
+                                  ),
+                                  SizedBox(
+                                    height: 10.h,
+                                  ),
+                                  Column(
+                                    children: detailsController.directorList
+                                        .map((e) => Text(
+                                              e,
+                                              style: GoogleFonts.poppins(
+                                                  color: whiteColor,
+                                                  fontSize: 16.w),
+                                            ))
+                                        .toList(),
+                                  ),
+                                  SizedBox(
+                                    height: 20.h,
+                                  ),
+                                  Text(
+                                    "Writers",
+                                    style: GoogleFonts.poppins(
+                                        color: whiteColor,
+                                        fontSize: 16.w,
+                                        decoration: TextDecoration.underline,
+                                        fontWeight: FontWeight.w500),
+                                  ),
+                                  SizedBox(
+                                    height: 10.h,
+                                  ),
+                                  Column(
+                                    children: detailsController.writerList
+                                        .map((e) => Text(
+                                              e,
+                                              style: GoogleFonts.poppins(
+                                                  color: whiteColor,
+                                                  fontSize: 16.w),
+                                            ))
+                                        .toList(),
+                                  ),
+                                ],
+                              )),
+                            ));
+                          },
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Starring: ",
+                                style: GoogleFonts.poppins(
+                                  fontWeight: FontWeight.w500,
+                                  color: const Color(0xbffff9f9),
+                                  fontSize: 12.w,
+                                ),
+                              ),
+                              Flexible(
+                                child: Text(
+                                  "Dakota Johnson,  Jamie Dornan, Jennifer Ehle, Eloise Mumford, Victor Rasuk, Luke Grimes",
+                                  style: GoogleFonts.poppins(
+                                      color: whiteColor,
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 10.w),
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ),
+                              Text(
+                                " more",
+                                style: GoogleFonts.poppins(
+                                    color: whiteColor,
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 10.w,
+                                    decoration: TextDecoration.underline),
+                              )
+                            ],
+                          ),
+                        ),
+                        SizedBox(
+                          height: 5.w,
+                        ),
+                        Row(
+                          children: [
+                            Text(
+                              "Director: ",
+                              style: GoogleFonts.poppins(
+                                fontWeight: FontWeight.w500,
+                                color: const Color(0xbffff9f9),
+                                fontSize: 12.w,
+                              ),
+                            ),
+                            Flexible(
+                              child: Text(
+                                "Sam Taylor- Johnson",
+                                style: GoogleFonts.poppins(
+                                    color: whiteColor,
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 10.w),
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ),
+                          ],
                         ),
                         SizedBox(
                           height: 24.w,
@@ -146,35 +316,37 @@ class DetailsScreen extends StatelessWidget {
                     Episode(
                       epName: "Ep 1 - Lorem ipsum",
                       goTo: () {
-                        // Get.to(() => VideoScreen(
-                        //       link:
-                        //           "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-                        //     ));
+                        Get.toNamed(AppRoutes.videoScreen);
                       },
                     ),
                     Episode(
                       epName: "Ep 2 - Lorem ipsum",
                       goTo: () {
-                        // Get.to(() => VideoScreen(
-                        //       link:
-                        //           "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-                        //     ));
+                        Get.toNamed(AppRoutes.videoScreen);
                       },
                     ),
                     Episode(
                       epName: "Ep 3 - Lorem ipsum",
                       goTo: () {
-                        // Get.to(() => VideoScreen(
-                        //       link:
-                        //           "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-                        // ));
+                        Get.toNamed(AppRoutes.videoScreen);
                       },
                     ),
                   ],
                   options: CarouselOptions(
                       viewportFraction: 0.459.w,
                       padEnds: false,
-                      enableInfiniteScroll: false))
+                      enableInfiniteScroll: false,
+                      aspectRatio: 2.w)),
+              Header(
+                title: "Similar Shows",
+                child: CarouselSlider(
+                    items: detailsController.recentList,
+                    options: CarouselOptions(
+                        aspectRatio: 1.5.w,
+                        viewportFraction: 0.474.w,
+                        enableInfiniteScroll: false,
+                        padEnds: false)),
+              ),
             ],
           ),
         ),

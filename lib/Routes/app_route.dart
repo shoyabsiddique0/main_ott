@@ -12,4 +12,6 @@ class AppRoutes {
   static const subscriptionScreen = '/subscriptionScreen';
   static const manageProfileScreen = '/manageProfileScreen';
   static const detailsScreen = '/detailsScreen';
+  static const videoScreen = '/videoScreen';
+  static const landscapeScreen = '/landscapeScreen';
 }

@@ -1,9 +1,16 @@
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:main_ott/Widgets/HomeWidget/cardView.dart';
 import 'package:main_ott/Widgets/SearchWidget/recent_card.dart';
 
 class SearchScreenController extends GetxController {
+  @override
+  void onInit() {
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+    super.onInit();
+  }
+
   final searchTextController = TextEditingController();
   final recentList = [
     RecentCard(

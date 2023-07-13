@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 class OtpController extends GetxController {
@@ -16,6 +17,7 @@ class OtpController extends GetxController {
   var start = 59.obs;
   @override
   void onInit() {
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
     const oneSec = Duration(seconds: 1);
     var timer = Timer.periodic(
       oneSec,

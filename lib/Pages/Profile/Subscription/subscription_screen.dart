@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:main_ott/Pages/Profile/Subscription/subscription_controller.dart';
 import 'package:main_ott/Theme/colors.dart';
 import 'package:main_ott/Widgets/ProfileWidget/SubscriptionWidget/plans.dart';
 import 'package:main_ott/Widgets/ProfileWidget/SubscriptionWidget/subscription_card.dart';
@@ -14,6 +15,7 @@ class SubscriptionScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SubscriptionController controller = Get.find<SubscriptionController>();
     return Scaffold(
       backgroundColor: const Color(0xff1C1B1B),
       appBar: AppBar(
@@ -88,62 +90,91 @@ class SubscriptionScreen extends StatelessWidget {
                   margin: EdgeInsets.only(top: 150.h),
                   child: Column(
                     children: [
-                      const SubscriptionCard(
+                      SubscriptionCard(
                         title: "Premium",
                         price: "999",
                         discountedPrice: "500",
                         duration: "1 Year",
                         isRecommended: true,
-                        colors: [
-                          Color(0xffF6A200),
-                          Color(0xffDB00FF),
-                        ],
+                        val: "1 year",
+                        groupValue: controller.groupValue,
+                        discount: "50",
                       ),
                       SizedBox(
                         height: 20.h,
                       ),
-                      const SubscriptionCard(
+                      SubscriptionCard(
                         title: "DELUXE",
                         price: "400",
                         discountedPrice: "300",
                         duration: "6 Months",
                         isRecommended: false,
-                        colors: [
-                          Color(0xff7B00F6),
-                          Color(0xff0094FF),
-                        ],
+                        val: "6 months",
+                        groupValue: controller.groupValue,
+                        discount: "30",
                       ),
                       SizedBox(
                         height: 20.h,
                       ),
-                      const SubscriptionCard(
+                      SubscriptionCard(
                         title: "STANDARD",
                         price: "200",
                         discountedPrice: "100",
                         duration: "1 Month",
                         isRecommended: false,
-                        colors: [
-                          Color(0xff00A7BD),
-                          Color(0xff4CB77D),
-                        ],
+                        val: "1 month",
+                        groupValue: controller.groupValue,
+                        discount: "15",
                       ),
                       SizedBox(
                         height: 20.h,
                       ),
-                      const SubscriptionCard(
+                      SubscriptionCard(
                         title: "BASIC",
                         price: "100",
                         discountedPrice: "50",
                         duration: "7 days",
                         isRecommended: false,
-                        colors: [
-                          Color(0xffC02739),
-                          Color(0xffC02739),
-                        ],
+                        val: "7 days",
+                        groupValue: controller.groupValue,
+                        discount: "5",
                       ),
                       SizedBox(
-                        height: 20.h,
+                        height: 30.h,
                       ),
+                      Container(
+                        margin: EdgeInsets.only(left: 24.w, right: 24.w),
+                        height: 50.h,
+                        child: ElevatedButton(
+                            onPressed: () {},
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Color(0xffC02739),
+                              elevation: 0,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(6.w)),
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Text(
+                                  "Subscribe",
+                                  style: GoogleFonts.poppins(
+                                      color: whiteColor,
+                                      fontSize: 24.w,
+                                      fontWeight: FontWeight.w500),
+                                ),
+                                SizedBox(
+                                  width: 10.w,
+                                ),
+                                SvgPicture.asset(
+                                    "assets/ProfileAssets/AccountSetting/rocket.svg"),
+                              ],
+                            )),
+                      ),
+                      SizedBox(
+                        height: 50.h,
+                      )
                     ],
                   ))
             ],
