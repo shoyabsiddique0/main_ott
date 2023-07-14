@@ -3,10 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:main_ott/Pages/Authentication/ForgotPassword/forgot_password_controller.dart';
 import 'package:main_ott/Pages/Category/category_controller.dart';
 import 'package:main_ott/Theme/colors.dart';
-import 'package:main_ott/Widgets/CategoryWidget/category_card.dart';
 
 class CategoryScreen extends StatelessWidget {
   const CategoryScreen({super.key});
@@ -15,16 +13,20 @@ class CategoryScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     CategoryController categoryController = Get.find<CategoryController>();
     return Scaffold(
-      backgroundColor: Color(0xff1c1b1b),
+      backgroundColor: const Color(0xff1c1b1b),
       body: SafeArea(
         child: Column(
           children: [
             Container(
               padding: EdgeInsets.only(left: 24.w, right: 24.w),
-              decoration: BoxDecoration(color: Color(0xff1c1b1b), boxShadow: [
-                BoxShadow(
-                    color: Colors.black, spreadRadius: 0.00001, blurRadius: 5)
-              ]),
+              decoration: const BoxDecoration(
+                  color: Color(0xff1c1b1b),
+                  boxShadow: [
+                    BoxShadow(
+                        color: Colors.black,
+                        spreadRadius: 0.00001,
+                        blurRadius: 5)
+                  ]),
               height: 130.h,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -56,8 +58,8 @@ class CategoryScreen extends StatelessWidget {
                           hintStyle: GoogleFonts.poppins(
                               color: whiteColor.withOpacity(0.5),
                               fontSize: 18.w),
-                          border: OutlineInputBorder(),
-                          focusedBorder: OutlineInputBorder()),
+                          border: const OutlineInputBorder(),
+                          focusedBorder: const OutlineInputBorder()),
                       style: GoogleFonts.poppins(
                           color: whiteColor.withOpacity(0.5), fontSize: 18.w),
                     ),
@@ -75,10 +77,10 @@ class CategoryScreen extends StatelessWidget {
                 child: Obx(
                   () => GridView.count(
                     crossAxisCount: 3,
-                    children: categoryController.categoryList,
                     childAspectRatio: 5.w / 7.5.w,
                     mainAxisSpacing: 8.h,
                     crossAxisSpacing: 7.w,
+                    children: categoryController.categoryList,
                   ),
                 ),
               ),

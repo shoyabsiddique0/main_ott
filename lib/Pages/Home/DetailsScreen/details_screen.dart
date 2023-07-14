@@ -17,7 +17,7 @@ class DetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     DetailsController detailsController = Get.find<DetailsController>();
     return Scaffold(
-      backgroundColor: Color(0xff1b1c1c),
+      backgroundColor: const Color(0xff1b1c1c),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -141,7 +141,7 @@ class DetailsScreen extends StatelessWidget {
                               height: 800.h,
                               padding: EdgeInsets.only(
                                   left: 24.w, right: 24.w, top: 24.h),
-                              color: Color(0xff1c1b1b),
+                              color: const Color(0xff1c1b1b),
                               child: SingleChildScrollView(
                                   child: Column(
                                 children: [
@@ -179,11 +179,19 @@ class DetailsScreen extends StatelessWidget {
                                   ),
                                   Column(
                                     children: detailsController.castList
-                                        .map((e) => Text(
-                                              e,
-                                              style: GoogleFonts.poppins(
-                                                  color: whiteColor,
-                                                  fontSize: 16.w),
+                                        .map((e) => GestureDetector(
+                                              onTap: () => Get.toNamed(
+                                                  AppRoutes.moreByScreen),
+                                              child: Container(
+                                                padding: EdgeInsets.only(
+                                                    top: 5.w, bottom: 5.w),
+                                                child: Text(
+                                                  e,
+                                                  style: GoogleFonts.poppins(
+                                                      color: whiteColor,
+                                                      fontSize: 16.w),
+                                                ),
+                                              ),
                                             ))
                                         .toList(),
                                   ),
@@ -203,11 +211,19 @@ class DetailsScreen extends StatelessWidget {
                                   ),
                                   Column(
                                     children: detailsController.directorList
-                                        .map((e) => Text(
-                                              e,
-                                              style: GoogleFonts.poppins(
-                                                  color: whiteColor,
-                                                  fontSize: 16.w),
+                                        .map((e) => GestureDetector(
+                                              onTap: () => Get.toNamed(
+                                                  AppRoutes.moreByScreen),
+                                              child: Container(
+                                                padding: EdgeInsets.only(
+                                                    top: 5.w, bottom: 5.w),
+                                                child: Text(
+                                                  e,
+                                                  style: GoogleFonts.poppins(
+                                                      color: whiteColor,
+                                                      fontSize: 16.w),
+                                                ),
+                                              ),
                                             ))
                                         .toList(),
                                   ),
@@ -227,11 +243,19 @@ class DetailsScreen extends StatelessWidget {
                                   ),
                                   Column(
                                     children: detailsController.writerList
-                                        .map((e) => Text(
-                                              e,
-                                              style: GoogleFonts.poppins(
-                                                  color: whiteColor,
-                                                  fontSize: 16.w),
+                                        .map((e) => GestureDetector(
+                                              onTap: () => Get.toNamed(
+                                                  AppRoutes.moreByScreen),
+                                              child: Container(
+                                                padding: EdgeInsets.only(
+                                                    top: 5.w, bottom: 5.w),
+                                                child: Text(
+                                                  e,
+                                                  style: GoogleFonts.poppins(
+                                                      color: whiteColor,
+                                                      fontSize: 16.w),
+                                                ),
+                                              ),
                                             ))
                                         .toList(),
                                   ),

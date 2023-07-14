@@ -14,4 +14,7 @@ class AppRoutes {
   static const detailsScreen = '/detailsScreen';
   static const videoScreen = '/videoScreen';
   static const landscapeScreen = '/landscapeScreen';
+  static const watchlistScreen = '/watchlistScreen';
+  static const downloadsScreen = '/downloadsScreen';
+  static const moreByScreen = '/moreByScreen';
 }

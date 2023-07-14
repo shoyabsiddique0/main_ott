@@ -78,6 +78,7 @@ flutter:
     - assets/ProfileAssets/
     - assets/ProfileAssets/AccountSetting/
     - assets/ProfileAssets/ManageProfiles/
+    - assets/ProfileAssets/WatchlistAssets/
     - assets/HomeAssets/DetailsAssets/
     - assets/HomeAssets/PlayerAssets/
   #   - images/a_dot_ham.jpeg

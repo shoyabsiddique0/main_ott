@@ -11,6 +11,8 @@ import 'package:main_ott/Pages/Category/category_binding.dart';
 import 'package:main_ott/Pages/Category/category_screen.dart';
 import 'package:main_ott/Pages/Authentication/ForgotPassword/forgot_password_binding.dart';
 import 'package:main_ott/Pages/Authentication/ForgotPassword/forgot_password_screen.dart';
+import 'package:main_ott/Pages/Home/DetailsScreen/MoreBy/more_by_binding.dart';
+import 'package:main_ott/Pages/Home/DetailsScreen/MoreBy/more_by_screen.dart';
 import 'package:main_ott/Pages/Home/DetailsScreen/details_bindng.dart';
 import 'package:main_ott/Pages/Home/DetailsScreen/details_screen.dart';
 import 'package:main_ott/Pages/Home/Video_Screen/video_screen.dart';
@@ -21,10 +23,14 @@ import 'package:main_ott/Pages/Home/landscapeVideo/landscape_binding.dart';
 import 'package:main_ott/Pages/Home/landscapeVideo/landscape_player.dart';
 import 'package:main_ott/Pages/Profile/AccountSetting/account_setting_binding.dart';
 import 'package:main_ott/Pages/Profile/AccountSetting/account_setting_screen.dart';
+import 'package:main_ott/Pages/Profile/Downloads/downloads_binding.dart';
+import 'package:main_ott/Pages/Profile/Downloads/downloads_screen.dart';
 import 'package:main_ott/Pages/Profile/ManageProfiles/manage_profile_binding.dart';
 import 'package:main_ott/Pages/Profile/ManageProfiles/manage_profile_screen.dart';
 import 'package:main_ott/Pages/Profile/Subscription/subscription_binding.dart';
 import 'package:main_ott/Pages/Profile/Subscription/subscription_screen.dart';
+import 'package:main_ott/Pages/Profile/Watchlist/watchlist_binding.dart';
+import 'package:main_ott/Pages/Profile/Watchlist/watchlist_screen.dart';
 import 'package:main_ott/Pages/Profile/profile_binding.dart';
 import 'package:main_ott/Pages/Profile/profile_screen.dart';
 import 'package:main_ott/Pages/Search/search_binding.dart';
@@ -108,5 +114,20 @@ class AppPages {
         page: () => LandscapePlayer(),
         binding: LandscapeBinding(),
         transition: Transition.noTransition),
+    GetPage(
+        name: AppRoutes.watchlistScreen,
+        page: () => const WatchlistScreen(),
+        binding: WatchlistBinding(),
+        transition: Transition.rightToLeft),
+    GetPage(
+        name: AppRoutes.downloadsScreen,
+        page: () => const DownloadsScreen(),
+        binding: DownloadsBinding(),
+        transition: Transition.rightToLeft),
+    GetPage(
+        name: AppRoutes.moreByScreen,
+        page: () => const MoreByScreen(),
+        binding: MoreByBinding(),
+        transition: Transition.rightToLeft),
   ];
 }

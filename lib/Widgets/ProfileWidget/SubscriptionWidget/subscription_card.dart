@@ -25,8 +25,9 @@ class SubscriptionCard extends StatelessWidget {
     return InkWell(
       onTap: () => groupValue.value = val,
       child: SizedBox(
-        height: 100.h,
+        height: 80.h,
         child: Stack(
+          fit: StackFit.loose,
           alignment: Alignment.bottomCenter,
           children: [
             Container(
@@ -60,14 +61,14 @@ class SubscriptionCard extends StatelessWidget {
                             "For $duration",
                             style: GoogleFonts.poppins(
                                 color: blackColor,
-                                fontSize: 16.w,
+                                fontSize: 14.w,
                                 fontWeight: FontWeight.w600),
                           ),
                           Text(
                             "$discount% Off",
                             style: GoogleFonts.poppins(
                               color: primaryColor,
-                              fontSize: 16.w,
+                              fontSize: 14.w,
                               fontWeight: FontWeight.w600,
                             ),
                           )
@@ -75,13 +76,13 @@ class SubscriptionCard extends StatelessWidget {
                       ),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           Text(
                             "₹$discountedPrice",
                             style: GoogleFonts.poppins(
                                 color: blackColor,
-                                fontSize: 24.w,
+                                fontSize: 20.w,
                                 fontWeight: FontWeight.w600),
                           ),
                           Text(
@@ -104,7 +105,9 @@ class SubscriptionCard extends StatelessWidget {
                 top: 0.h,
                 child: isRecommended
                     ? SvgPicture.asset(
-                        "assets/ProfileAssets/AccountSetting/bestVal.svg")
+                        "assets/ProfileAssets/AccountSetting/bestVal.svg",
+                        fit: BoxFit.scaleDown,
+                      )
                     : const SizedBox.shrink())
           ],
         ),
