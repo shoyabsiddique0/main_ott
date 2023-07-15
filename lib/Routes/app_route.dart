@@ -17,4 +17,6 @@ class AppRoutes {
   static const watchlistScreen = '/watchlistScreen';
   static const downloadsScreen = '/downloadsScreen';
   static const moreByScreen = '/moreByScreen';
+  static const changePasswordScreen = '/changePasswordScreen';
+  static const profileManageScreen = '/profileManageScreen';
 }

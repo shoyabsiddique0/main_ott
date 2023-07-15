@@ -5,38 +5,45 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:main_ott/Theme/colors.dart';
 
 class Profiles extends StatelessWidget {
-  const Profiles({super.key});
+  final void Function() goTo;
+  const Profiles({super.key, required this.goTo});
 
   @override
   Widget build(BuildContext context) {
     return Center(
       child: SizedBox(
-        height: 140.h,
-        width: 120.w,
+        height: 148.h,
+        width: 122.w,
         child: Stack(
           children: [
             Align(
               alignment: Alignment.bottomLeft,
               child: SizedBox(
                 width: 100.w,
-                height: 120.h,
+                height: 130.h,
                 child: Column(
                   children: [
-                    Image.asset("assets/ProfileAssets/profile.png"),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          "Nico Robin",
-                          style: GoogleFonts.poppins(
-                              color: whiteColor,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 12.w),
-                        ),
-                        SvgPicture.asset(
-                          "assets/ProfileAssets/ManageProfiles/lock.svg",
-                        )
-                      ],
+                    SizedBox(
+                        width: 100.w,
+                        height: 100.h,
+                        child: Image.asset("assets/ProfileAssets/profile.png", fit: BoxFit.contain,)),
+                    Container(
+                      padding: EdgeInsets.only(left: 5.w, right: 5.w),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Nico Robin",
+                            style: GoogleFonts.poppins(
+                                color: whiteColor,
+                                fontWeight: FontWeight.w500,
+                                fontSize: 12.w),
+                          ),
+                          SvgPicture.asset(
+                            "assets/ProfileAssets/ManageProfiles/lock.svg",
+                          )
+                        ],
+                      ),
                     )
                   ],
                 ),
@@ -44,8 +51,11 @@ class Profiles extends StatelessWidget {
             ),
             Align(
                 alignment: Alignment.topRight,
-                child: SvgPicture.asset(
-                    "assets/ProfileAssets/ManageProfiles/edit.svg"))
+                child: GestureDetector(
+                  onTap: goTo,
+                  child: SvgPicture.asset(
+                      "assets/ProfileAssets/ManageProfiles/edit.svg"),
+                ))
           ],
         ),
       ),

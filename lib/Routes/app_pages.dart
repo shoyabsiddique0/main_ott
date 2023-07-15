@@ -23,8 +23,12 @@ import 'package:main_ott/Pages/Home/landscapeVideo/landscape_binding.dart';
 import 'package:main_ott/Pages/Home/landscapeVideo/landscape_player.dart';
 import 'package:main_ott/Pages/Profile/AccountSetting/account_setting_binding.dart';
 import 'package:main_ott/Pages/Profile/AccountSetting/account_setting_screen.dart';
+import 'package:main_ott/Pages/Profile/ChangePassword/change_password_binding.dart';
+import 'package:main_ott/Pages/Profile/ChangePassword/change_password_screen.dart';
 import 'package:main_ott/Pages/Profile/Downloads/downloads_binding.dart';
 import 'package:main_ott/Pages/Profile/Downloads/downloads_screen.dart';
+import 'package:main_ott/Pages/Profile/ManageProfiles/ProfileManagement/profile_manage_bindng.dart';
+import 'package:main_ott/Pages/Profile/ManageProfiles/ProfileManagement/profile_manage_screen.dart';
 import 'package:main_ott/Pages/Profile/ManageProfiles/manage_profile_binding.dart';
 import 'package:main_ott/Pages/Profile/ManageProfiles/manage_profile_screen.dart';
 import 'package:main_ott/Pages/Profile/Subscription/subscription_binding.dart';
@@ -128,6 +132,16 @@ class AppPages {
         name: AppRoutes.moreByScreen,
         page: () => const MoreByScreen(),
         binding: MoreByBinding(),
+        transition: Transition.rightToLeft),
+    GetPage(
+        name: AppRoutes.changePasswordScreen,
+        page: () => const ChangePassword(),
+        binding: ChangePasswordBinding(),
+        transition: Transition.rightToLeft),
+    GetPage(
+        name: AppRoutes.profileManageScreen,
+        page: () => const ProfileManageScreen(),
+        binding: ProfileManageBinding(),
         transition: Transition.rightToLeft),
   ];
 }

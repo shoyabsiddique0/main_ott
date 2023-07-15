@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:main_ott/Routes/app_route.dart';
 import 'package:main_ott/Theme/colors.dart';
 import 'package:main_ott/Widgets/ProfileWidget/ManageProfile/profiles.dart';
 
@@ -37,18 +38,18 @@ class ManageProfileScreen extends StatelessWidget {
           crossAxisCount: 2,
           crossAxisSpacing: 20.w,
           mainAxisSpacing: 15.h,
-          childAspectRatio: 2 / 3,
-          shrinkWrap: false,
+          childAspectRatio: 3.w / 4.h,
+          shrinkWrap: true,
           children: [
-            const Profiles(),
-            const Profiles(),
-            const Profiles(),
-            const Profiles(),
+            Profiles(goTo: () => Get.toNamed(AppRoutes.profileManageScreen),),
+            Profiles(goTo: () => Get.toNamed(AppRoutes.profileManageScreen)),
+            Profiles(goTo: () => Get.toNamed(AppRoutes.profileManageScreen)),
+            Profiles(goTo: () => Get.toNamed(AppRoutes.profileManageScreen)),
             Column(
               children: [
                 Container(
-                  width: 110.w,
-                  height: 100.h,
+                  width: 100.w,
+                  height: 100.w,
                   decoration: const BoxDecoration(color: blackColor),
                   child: SvgPicture.asset(
                     "assets/ProfileAssets/ManageProfiles/adduser.svg",

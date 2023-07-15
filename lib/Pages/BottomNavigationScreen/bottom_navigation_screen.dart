@@ -14,6 +14,7 @@ class BottomNavigationScreen extends StatelessWidget {
     final bottomNavigationController = Get.find<BottomNavigationController>();
     return Scaffold(
       backgroundColor: blackColor,
+      extendBody: true,
       bottomNavigationBar: Obx(() => BottomNavigationBar(
             items: [
               BottomNavigationBarItem(

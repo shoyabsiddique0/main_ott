@@ -186,7 +186,7 @@ class ProfileScreen extends StatelessWidget {
                   ProfileList(
                     imageLink: "assets/ProfileAssets/pass.svg",
                     title: "Change Password",
-                    onTap: () {},
+                    onTap: () => Get.toNamed(AppRoutes.changePasswordScreen),
                   ),
                 ],
               ),
@@ -249,10 +249,10 @@ class ProfileScreen extends StatelessWidget {
                       //           onPressed: () => Get.back(), child: Text("No"))
                       //     ]);
                       Get.dialog(Container(
-                        width: 100.w,
+                        width: 100.h,
                         height: 100.h,
                         margin: EdgeInsets.only(
-                            top: 230.h, bottom: 230.h, left: 60.w, right: 60.w),
+                            top: 220.h, bottom: 220.h, left: 60.w, right: 60.w),
                         decoration: BoxDecoration(
                             color: Color(0xff1b1c1c),
                             borderRadius: BorderRadius.circular(8.r),

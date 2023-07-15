@@ -7,11 +7,13 @@ import 'package:main_ott/Theme/colors.dart';
 class EditProfile extends StatelessWidget {
   final String imageLink, title;
   final void Function() onTap;
+  final Widget? suffix;
+  final Color? color;
   const EditProfile(
       {super.key,
       required this.imageLink,
       required this.title,
-      required this.onTap});
+      required this.onTap, this.suffix, this.color});
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +29,7 @@ class EditProfile extends StatelessWidget {
                 width: 24.w,
                 height: 24.h,
                 fit: BoxFit.scaleDown,
+                color: color ?? whiteColor,
               ),
               SizedBox(
                 width: 16.w,
@@ -34,13 +37,13 @@ class EditProfile extends StatelessWidget {
               Text(
                 title,
                 style: GoogleFonts.poppins(
-                    color: whiteColor,
+                    color: color ?? whiteColor,
                     fontWeight: FontWeight.w500,
                     fontSize: 16.w),
               ),
             ],
           ),
-          SvgPicture.asset(
+          suffix ?? SvgPicture.asset(
             "assets/ProfileAssets/AccountSetting/edit.svg",
             width: 24.w,
             height: 24.h,
