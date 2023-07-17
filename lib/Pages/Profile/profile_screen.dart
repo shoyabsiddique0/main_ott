@@ -78,7 +78,7 @@ class ProfileScreen extends StatelessWidget {
               children: [
                 Text(
                   "Main",
-                  style: GoogleFonts.poppins(color: whiteColor),
+                  style: GoogleFonts.poppins(color: whiteColor, fontSize: 12.w),
                 ),
                 SizedBox(
                   height: 16.h,
@@ -197,7 +197,7 @@ class ProfileScreen extends StatelessWidget {
               children: [
                 Text(
                   "Others",
-                  style: GoogleFonts.poppins(color: whiteColor),
+                  style: GoogleFonts.poppins(color: whiteColor, fontSize: 12.w),
                 ),
                 SizedBox(
                   height: 16.h,
@@ -226,7 +226,7 @@ class ProfileScreen extends StatelessWidget {
               children: [
                 Text(
                   "Actions",
-                  style: GoogleFonts.poppins(color: whiteColor),
+                  style: GoogleFonts.poppins(color: whiteColor, fontSize: 12.w),
                 ),
                 SizedBox(
                   height: 16.h,

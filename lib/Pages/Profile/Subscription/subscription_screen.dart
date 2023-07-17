@@ -38,12 +38,12 @@ class SubscriptionScreen extends StatelessWidget {
           child: Stack(
             children: [
               Container(
-                height: 200.h,
+                height: 600.h,
                 width: double.infinity,
                 decoration: const BoxDecoration(
                     gradient: LinearGradient(colors: [
-                  Color(0xffC02739),
-                  Color(0xff000000),
+                  Color(0xffBD2638),
+                  // Color(0xffC02739),
                   Color(0xff1C1B1B)
                 ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
               ),
@@ -80,7 +80,7 @@ class SubscriptionScreen extends StatelessWidget {
                   )),
               Positioned(
                   right: 0,
-                  top: 30.h,
+                  top: 80.h,
                   child: SvgPicture.asset(
                     "assets/ProfileAssets/AccountSetting/popcorn.svg",
                     width: 130.w,

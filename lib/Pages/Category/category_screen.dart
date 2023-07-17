@@ -55,68 +55,31 @@ class CategoryScreen extends StatelessWidget {
                       color: whiteColor.withOpacity(0.5), fontSize: 18.w),
                 ),
               ),
-              // SingleChildScrollView(),
             ],
           ),
         ),
-        Expanded(
-          child: Container(
-            // height: 500.h,
-            color: Colors.white,
-            width: double.infinity,
-            padding: EdgeInsets.only(left: 20.w, right: 20.w),
-            // child: Obx(
-            //   () => GridView.count(
-            //     physics: BouncingScrollPhysics(),
-            //     scrollDirection: Axis.vertical,
-            //     crossAxisCount: 3,
-            //     semanticChildCount: categoryController.categoryList.length,
-            //     shrinkWrap: true,
-            //     childAspectRatio: 5.w / 7.5.w,
-            //     mainAxisSpacing: 8.h,
-            //     crossAxisSpacing: 7.w,
-            //     children: categoryController.categoryList,
-            //   ),
-            // ),
-            // child: SingleChildScrollView(
-            //     child: Column(
-            //         crossAxisAlignment: CrossAxisAlignment.start,
-            //         mainAxisAlignment: MainAxisAlignment.start,
-            //         children: categoryController.categoryRows())),
-            // child: GridView.builder(
-            //   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            //     crossAxisCount: 3,
-            //     childAspectRatio: 2 / 2.9,
-            //     crossAxisSpacing: 15.0,
-            //     mainAxisSpacing: 15.0,
-            //   ),
-            //   itemBuilder: ((context, index) =>
-            //       categoryController.categoryList[index]),
-            //   itemCount: categoryController.categoryList.length,
-            //   shrinkWrap: true,
-            //   physics: ClampingScrollPhysics(parent: ScrollPhysics()),
-            // ),
-            child: Expanded(
-              child: Padding(
-                padding: EdgeInsets.only(left: 20.w, right: 20.w),
-                child: Obx(
-                  () => GridView.count(
-                    crossAxisCount: 3,
-                    semanticChildCount: categoryController.categoryList.length,
-                    shrinkWrap: true,
-                    childAspectRatio: 5.w / 7.5.w,
-                    mainAxisSpacing: 8.h,
-                    crossAxisSpacing: 7.w,
-                    children: categoryController.categoryList,
-                  ),
+        Flexible(
+          child: SingleChildScrollView(
+            child: Container(
+              color: Color(0xff1b1c1c),
+              width: double.infinity,
+              padding: EdgeInsets.only(left: 20.w, right: 20.w),
+              child: Obx(
+                () => GridView.count(
+                  physics: NeverScrollableScrollPhysics(),
+                  scrollDirection: Axis.vertical,
+                  crossAxisCount: 3,
+                  semanticChildCount: categoryController.categoryList.length,
+                  shrinkWrap: true,
+                  childAspectRatio: 5.w / 7.5.w,
+                  mainAxisSpacing: 8.h,
+                  crossAxisSpacing: 7.w,
+                  children: categoryController.categoryList,
                 ),
               ),
             ),
           ),
         ),
-        SizedBox(
-          height: 70.h,
-        )
       ],
     );
   }

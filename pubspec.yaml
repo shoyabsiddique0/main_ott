@@ -46,6 +46,7 @@ dependencies:
   volume_controller: ^2.0.7
   screen_brightness: ^0.2.2
   flutter_svg_provider:
+  visibility_detector: ^0.4.0+2
 
 dev_dependencies:
   flutter_test:

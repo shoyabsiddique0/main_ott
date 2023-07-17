@@ -145,12 +145,12 @@ class AccountSettingScreen extends StatelessWidget {
                           style: GoogleFonts.poppins(
                               color: whiteColor,
                               fontWeight: FontWeight.w500,
-                              fontSize: 16.w)),
+                              fontSize: 15.w)),
                       Text("Premium",
                           style: GoogleFonts.poppins(
                               color: whiteColor,
                               fontWeight: FontWeight.w500,
-                              fontSize: 16.w)),
+                              fontSize: 15.w)),
                     ],
                   ),
                   SizedBox(

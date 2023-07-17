@@ -69,6 +69,10 @@ class CategoryController extends GetxController {
       imageLink: "assets/CategoryAssets/thriller.png",
       title: "Thriller",
     ),
+    const CategoryCard(
+      imageLink: "assets/CategoryAssets/thriller.png",
+      title: "Not Thriller",
+    ),
   ].obs;
   List<Widget> categoryRows() {
     List<Widget> data = [];

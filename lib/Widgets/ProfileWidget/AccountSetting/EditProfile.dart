@@ -13,7 +13,9 @@ class EditProfile extends StatelessWidget {
       {super.key,
       required this.imageLink,
       required this.title,
-      required this.onTap, this.suffix, this.color});
+      required this.onTap,
+      this.suffix,
+      this.color});
 
   @override
   Widget build(BuildContext context) {
@@ -39,15 +41,16 @@ class EditProfile extends StatelessWidget {
                 style: GoogleFonts.poppins(
                     color: color ?? whiteColor,
                     fontWeight: FontWeight.w500,
-                    fontSize: 16.w),
+                    fontSize: 15.w),
               ),
             ],
           ),
-          suffix ?? SvgPicture.asset(
-            "assets/ProfileAssets/AccountSetting/edit.svg",
-            width: 24.w,
-            height: 24.h,
-          ),
+          suffix ??
+              SvgPicture.asset(
+                "assets/ProfileAssets/AccountSetting/edit.svg",
+                width: 24.w,
+                height: 24.h,
+              ),
         ],
       ),
     );

@@ -42,11 +42,15 @@ class CardView extends StatelessWidget {
           ),
           Row(
             children: [
-              SvgPicture.asset("assets/HomeAssets/playIcon.svg"),
+              SizedBox(
+                  height: 12.w,
+                  width: 12.w,
+                  child: SvgPicture.asset("assets/HomeAssets/playIcon.svg")),
               Text("  $name",
                   style: GoogleFonts.poppins(
-                    color: whiteColor,
-                  ),
+                      color: whiteColor,
+                      fontSize: 12.w,
+                      fontWeight: FontWeight.w500),
                   overflow: TextOverflow.ellipsis),
             ],
           )

@@ -17,7 +17,9 @@ class Episode extends StatelessWidget {
         decoration: BoxDecoration(borderRadius: BorderRadius.circular(15.w)),
         child: Column(
           children: [
-            Image.asset("assets/HomeAssets/DetailsAssets/episode.png"),
+            SizedBox(
+                child:
+                    Image.asset("assets/HomeAssets/DetailsAssets/episode.png")),
             Padding(
               padding: EdgeInsets.only(left: 12.w),
               child: Row(
@@ -25,12 +27,11 @@ class Episode extends StatelessWidget {
                   SvgPicture.asset(
                     "assets/HomeAssets/playIcon.svg",
                     fit: BoxFit.fitWidth,
-                    width: 10.w,
+                    width: 8.w,
                   ),
                   Text(" $epName",
                       style: GoogleFonts.poppins(
-                        color: Colors.white,
-                      ),
+                          color: Colors.white, fontSize: 12.w),
                       overflow: TextOverflow.ellipsis),
                 ],
               ),

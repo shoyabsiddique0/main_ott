@@ -7,7 +7,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:main_ott/Pages/Search/search_controller.dart';
 import 'package:main_ott/Theme/colors.dart';
 import 'package:main_ott/Widgets/HomeWidget/header.dart';
-import 'package:main_ott/Widgets/SearchWidget/recent_card.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});
