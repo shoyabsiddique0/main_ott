@@ -16,13 +16,14 @@ class SearchScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     SearchScreenController searchController =
         Get.find<SearchScreenController>();
-    return SafeArea(
-        child: Container(
+    return Container(
+      padding: EdgeInsets.only(top: 20.h),
       color: const Color(0xff1c1b1b),
       child: Column(
         children: [
           Container(
-              padding: EdgeInsets.only(right: 24.w, top: 17.h, left: 24.w),
+              padding: EdgeInsets.only(
+                  right: 24.w, top: 17.h, left: 24.w, bottom: 17.h),
               child: Column(
                 children: [
                   Row(
@@ -69,56 +70,59 @@ class SearchScreen extends StatelessWidget {
                       )
                     ],
                   ),
-                  SizedBox(
-                    height: 10.h,
-                  ),
-                  SizedBox(
+                ],
+              )),
+          Expanded(
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Container(
+                    padding: EdgeInsets.only(left: 24.w, right: 24.w),
                     height: 100.h,
                     child: ListView(
                       scrollDirection: Axis.horizontal,
                       children: searchController.recentList,
                     ),
                   ),
+                  Header(
+                    title: "Most Searched",
+                    child: CarouselSlider(
+                        items: searchController.trendingList,
+                        options: CarouselOptions(
+                            aspectRatio: 1.5.w,
+                            viewportFraction: 0.474.w,
+                            enableInfiniteScroll: false,
+                            padEnds: false)),
+                  ),
+                  Header(
+                    title: "Trending Now",
+                    child: CarouselSlider(
+                        items: searchController.trendingList,
+                        options: CarouselOptions(
+                            aspectRatio: 1.5.w,
+                            viewportFraction: 0.474.w,
+                            enableInfiniteScroll: false,
+                            padEnds: false)),
+                  ),
+                  Header(
+                    title: "Trending Now",
+                    child: CarouselSlider(
+                        items: searchController.trendingList,
+                        options: CarouselOptions(
+                            aspectRatio: 1.5.w,
+                            viewportFraction: 0.474.w,
+                            enableInfiniteScroll: false,
+                            padEnds: false)),
+                  ),
                 ],
-              )),
-          Expanded(
-            child: ListView(
-              children: [
-                Header(
-                  title: "Most Searched",
-                  child: CarouselSlider(
-                      items: searchController.trendingList,
-                      options: CarouselOptions(
-                          aspectRatio: 1.5.w,
-                          viewportFraction: 0.474.w,
-                          enableInfiniteScroll: false,
-                          padEnds: false)),
-                ),
-                Header(
-                  title: "Trending Now",
-                  child: CarouselSlider(
-                      items: searchController.trendingList,
-                      options: CarouselOptions(
-                          aspectRatio: 1.5.w,
-                          viewportFraction: 0.474.w,
-                          enableInfiniteScroll: false,
-                          padEnds: false)),
-                ),
-                Header(
-                  title: "Trending Now",
-                  child: CarouselSlider(
-                      items: searchController.trendingList,
-                      options: CarouselOptions(
-                          aspectRatio: 1.5.w,
-                          viewportFraction: 0.474.w,
-                          enableInfiniteScroll: false,
-                          padEnds: false)),
-                ),
-              ],
+              ),
             ),
           ),
+          SizedBox(
+            height: 70.h,
+          )
         ],
       ),
-    ));
+    );
   }
 }

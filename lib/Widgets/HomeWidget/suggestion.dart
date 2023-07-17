@@ -34,36 +34,36 @@ class Suggestion extends StatelessWidget {
               ),
             ),
             child: Image.asset(imageLink)),
-        Positioned(
-            top: 50.h,
-            right: 25.w,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(8),
-              child: BackdropFilter(
-                filter: ImageFilter.blur(sigmaX: 6.0, sigmaY: 6.0),
-                child: Container(
-                  color: whiteColor.withOpacity(0.25),
-                  width: 100.0.w,
-                  height: 40.0.w,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      SvgPicture.asset(
-                        "assets/HomeAssets/subscribe.svg",
-                        fit: BoxFit.scaleDown,
-                      ),
-                      Text(
-                        "Subscribe",
-                        style: GoogleFonts.poppins(
-                            color: whiteColor,
-                            fontSize: 12.w,
-                            fontWeight: FontWeight.w500),
-                      )
-                    ],
-                  ),
-                ),
-              ),
-            )),
+        // Positioned(
+        //     top: 50.h,
+        //     right: 25.w,
+        //     child: ClipRRect(
+        //       borderRadius: BorderRadius.circular(8),
+        //       child: BackdropFilter(
+        //         filter: ImageFilter.blur(sigmaX: 6.0, sigmaY: 6.0),
+        //         child: Container(
+        //           color: whiteColor.withOpacity(0.25),
+        //           width: 100.0.w,
+        //           height: 40.0.w,
+        //           child: Row(
+        //             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        //             children: [
+        //               SvgPicture.asset(
+        //                 "assets/HomeAssets/subscribe.svg",
+        //                 fit: BoxFit.scaleDown,
+        //               ),
+        //               Text(
+        //                 "Subscribe",
+        //                 style: GoogleFonts.poppins(
+        //                     color: whiteColor,
+        //                     fontSize: 12.w,
+        //                     fontWeight: FontWeight.w500),
+        //               )
+        //             ],
+        //           ),
+        //         ),
+        //       ),
+        //     )),
         Positioned(
             bottom: 98.h,
             left: 25.2.w,

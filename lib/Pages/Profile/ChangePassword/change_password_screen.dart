@@ -72,73 +72,69 @@ class ChangePassword extends StatelessWidget {
               height: 55.h,
               width: double.infinity,
               padding: EdgeInsets.only(left: 24.w, right: 24.w),
-              child: Expanded(
-                child: ElevatedButton(
-                  onPressed: () {
-                    Get.dialog(Container(
-                      width: 100.w,
-                      height: 100.h,
-                      margin: EdgeInsets.only(
-                          top: 230.h, bottom: 230.h, left: 60.w, right: 60.w),
-                      decoration: BoxDecoration(
-                          color: Color(0xff1b1c1c),
-                          borderRadius: BorderRadius.circular(8.r),
-                          border:
-                          Border.all(color: whiteColor, width: 0.2.w)),
-                      child: Stack(
-                        children: [
-                          Container(
-                            padding: EdgeInsets.only(top: 15.h, bottom: 15.h),
-                            child: Column(
-                              mainAxisAlignment:
-                              MainAxisAlignment.spaceEvenly,
-                              children: [
-                                CircleAvatar(
-                                    backgroundColor: Color(0xff383636),
-                                    radius: 40.w,
-                                    child: SvgPicture.asset(
-                                        "assets/ProfileAssets/great.svg")),
-                                Text(
-                                  "Great!",
-                                  style: GoogleFonts.poppins(
-                                      color: whiteColor,
-                                      fontSize: 18.w,
-                                      fontWeight: FontWeight.w600,
-                                      decoration: TextDecoration.none),
-                                ),
-                                Text(
-                                  "Your password has been updated Successfully",
-                                  textAlign: TextAlign.center,
-                                  style: GoogleFonts.poppins(
-                                      color: whiteColor,
-                                      fontSize: 12.w,
-                                      fontWeight: FontWeight.w400,
-                                      decoration: TextDecoration.none),
-                                ),
-                              ],
-                            ),
+              child: ElevatedButton(
+                onPressed: () {
+                  Get.dialog(Container(
+                    width: 100.w,
+                    height: 100.h,
+                    margin: EdgeInsets.only(
+                        top: 230.h, bottom: 230.h, left: 60.w, right: 60.w),
+                    decoration: BoxDecoration(
+                        color: Color(0xff1b1c1c),
+                        borderRadius: BorderRadius.circular(8.r),
+                        border: Border.all(color: whiteColor, width: 0.2.w)),
+                    child: Stack(
+                      children: [
+                        Container(
+                          padding: EdgeInsets.only(top: 15.h, bottom: 15.h),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              CircleAvatar(
+                                  backgroundColor: Color(0xff383636),
+                                  radius: 40.w,
+                                  child: SvgPicture.asset(
+                                      "assets/ProfileAssets/great.svg")),
+                              Text(
+                                "Great!",
+                                style: GoogleFonts.poppins(
+                                    color: whiteColor,
+                                    fontSize: 18.w,
+                                    fontWeight: FontWeight.w600,
+                                    decoration: TextDecoration.none),
+                              ),
+                              Text(
+                                "Your password has been updated Successfully",
+                                textAlign: TextAlign.center,
+                                style: GoogleFonts.poppins(
+                                    color: whiteColor,
+                                    fontSize: 12.w,
+                                    fontWeight: FontWeight.w400,
+                                    decoration: TextDecoration.none),
+                              ),
+                            ],
                           ),
-                          Positioned(
-                            right: 8.w,
-                            top: 8.w,
-                            child: GestureDetector(
-                              onTap: () => Get.back(),
-                              child: SvgPicture.asset(
-                                  "assets/HomeAssets/DetailsAssets/cross.svg"),
-                            ),
-                          )
-                        ],
-                      ),
-                    ));
-                  },
-                  child: Text("Update",
-                      style: GoogleFonts.poppins(
-                          color: whiteColor,
-                          fontSize: 16.h,
-                          fontWeight: FontWeight.w500)),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: primaryColor,
-                  ),
+                        ),
+                        Positioned(
+                          right: 8.w,
+                          top: 8.w,
+                          child: GestureDetector(
+                            onTap: () => Get.back(),
+                            child: SvgPicture.asset(
+                                "assets/HomeAssets/DetailsAssets/cross.svg"),
+                          ),
+                        )
+                      ],
+                    ),
+                  ));
+                },
+                child: Text("Update",
+                    style: GoogleFonts.poppins(
+                        color: whiteColor,
+                        fontSize: 16.h,
+                        fontWeight: FontWeight.w500)),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: primaryColor,
                 ),
               ),
             )

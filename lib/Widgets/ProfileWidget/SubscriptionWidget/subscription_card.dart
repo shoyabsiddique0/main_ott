@@ -25,13 +25,13 @@ class SubscriptionCard extends StatelessWidget {
     return InkWell(
       onTap: () => groupValue.value = val,
       child: SizedBox(
-        height: 80.h,
+        height: 88.h,
         child: Stack(
-          fit: StackFit.loose,
+          fit: StackFit.passthrough,
           alignment: Alignment.bottomCenter,
           children: [
             Container(
-              margin: EdgeInsets.only(left: 24.w, right: 24.w),
+              margin: EdgeInsets.only(left: 24.w, right: 24.w, top: 10.h),
               padding: EdgeInsets.only(
                   left: 10.w, right: 20.w, top: 10.h, bottom: 10.h),
               height: 88.h,
@@ -105,8 +105,9 @@ class SubscriptionCard extends StatelessWidget {
                 top: 0.h,
                 child: isRecommended
                     ? SvgPicture.asset(
-                        "assets/ProfileAssets/AccountSetting/bestVal.svg",
+                        "assets/ProfileAssets/AccountSetting/bestValue.svg",
                         fit: BoxFit.scaleDown,
+                        cacheColorFilter: true,
                       )
                     : const SizedBox.shrink())
           ],

@@ -179,6 +179,9 @@ class HomeScreen extends StatelessWidget {
                     viewportFraction: 0.474.w,
                     enableInfiniteScroll: false,
                     padEnds: false))),
+        SizedBox(
+          height: 70.h,
+        )
       ]),
     );
   }

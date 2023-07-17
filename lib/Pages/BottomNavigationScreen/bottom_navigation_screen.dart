@@ -15,49 +15,64 @@ class BottomNavigationScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: blackColor,
       extendBody: true,
-      bottomNavigationBar: Obx(() => BottomNavigationBar(
-            items: [
-              BottomNavigationBarItem(
-                icon: SvgPicture.asset("assets/NavBarAssets/home.svg"),
-                label: "Home",
-              ),
-              BottomNavigationBarItem(
-                  icon: SvgPicture.asset("assets/NavBarAssets/category.svg"),
-                  label: "Category"),
-              BottomNavigationBarItem(
-                  icon: SvgPicture.asset("assets/NavBarAssets/search.svg"),
-                  label: "Search"),
-              BottomNavigationBarItem(
-                  icon: ClipRRect(
-                    borderRadius: BorderRadius.circular(24.w),
-                    child: SizedBox(
-                        height: 24.w,
-                        width: 24.w,
-                        child: Image.asset("assets/ProfileAssets/profile.png")),
-                  ),
-                  // activeIcon:
-                  //     SvgPicture.asset("assets/NavBarAssets/activeProfile.svg"),
-                  label: "Profile"),
-            ],
-            type: BottomNavigationBarType.fixed,
-            backgroundColor: blackColor,
-            currentIndex: bottomNavigationController.pageIndex.value,
-            selectedItemColor: whiteColor,
-            unselectedItemColor: hintTextColor,
-            selectedFontSize: 12.sp,
-            unselectedFontSize: 12.sp,
-            onTap: (int index) {
-              bottomNavigationController.pageIndex.value = index;
-            },
-            showUnselectedLabels: false,
-            selectedLabelStyle: GoogleFonts.poppins(
-                color: whiteColor,
-                fontSize: 12.sp,
-                fontWeight: FontWeight.w500),
-            // unselectedLabelStyle: GoogleFonts.poppins(
-            //     color: Color(0xff5d5d5d),
-            //     fontSize: 12.sp,
-            //     fontWeight: FontWeight.w500),
+      bottomNavigationBar: Obx(() => Theme(
+            data: ThemeData.dark(),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Align(
+                  alignment: Alignment.bottomRight,
+                  child: Image.asset("assets/NavBarAssets/upgrade.png"),
+                ),
+                BottomNavigationBar(
+                  items: [
+                    BottomNavigationBarItem(
+                      icon: SvgPicture.asset("assets/NavBarAssets/home.svg"),
+                      label: "Home",
+                    ),
+                    BottomNavigationBarItem(
+                        icon: SvgPicture.asset(
+                            "assets/NavBarAssets/category.svg"),
+                        label: "Category"),
+                    BottomNavigationBarItem(
+                        icon:
+                            SvgPicture.asset("assets/NavBarAssets/search.svg"),
+                        label: "Search"),
+                    BottomNavigationBarItem(
+                        icon: ClipRRect(
+                          borderRadius: BorderRadius.circular(24.w),
+                          child: SizedBox(
+                              height: 24.w,
+                              width: 24.w,
+                              child: Image.asset(
+                                  "assets/ProfileAssets/profile.png")),
+                        ),
+                        // activeIcon:
+                        //     SvgPicture.asset("assets/NavBarAssets/activeProfile.svg"),
+                        label: "Profile"),
+                  ],
+                  type: BottomNavigationBarType.fixed,
+                  // backgroundColor: blackColor,
+                  currentIndex: bottomNavigationController.pageIndex.value,
+                  selectedItemColor: whiteColor,
+                  unselectedItemColor: hintTextColor,
+                  selectedFontSize: 12.sp,
+                  unselectedFontSize: 12.sp,
+                  onTap: (int index) {
+                    bottomNavigationController.pageIndex.value = index;
+                  },
+                  showUnselectedLabels: false,
+                  selectedLabelStyle: GoogleFonts.poppins(
+                      color: whiteColor,
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w500),
+                  // unselectedLabelStyle: GoogleFonts.poppins(
+                  //     color: Color(0xff5d5d5d),
+                  //     fontSize: 12.sp,
+                  //     fontWeight: FontWeight.w500),
+                ),
+              ],
+            ),
           )),
       body: Obx(() => bottomNavigationController
           .pages[bottomNavigationController.pageIndex.value]),
