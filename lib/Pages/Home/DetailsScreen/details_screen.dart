@@ -33,11 +33,12 @@ class DetailsScreen extends StatelessWidget {
                         gradient: LinearGradient(
                           colors: [
                             Color(0xff1b1c1c),
+                            Color(0xff1b1c1c),
                             Colors.transparent,
                           ],
                           begin: Alignment.bottomCenter,
                           end: Alignment.topCenter,
-                          stops: [0, 0.5],
+                          stops: [0, 0.15, 0.3],
                         ),
                       ), // ),
 
@@ -420,14 +421,15 @@ class DetailsScreen extends StatelessWidget {
                       viewportFraction: 0.459.w,
                       padEnds: false,
                       enableInfiniteScroll: false,
-                      aspectRatio: 2.5.w)),
+                      aspectRatio: 2.9.w)),
               Header(
+                inverse: false,
                 title: "Similar Shows",
                 child: CarouselSlider(
                     items: detailsController.recentList,
                     options: CarouselOptions(
-                        aspectRatio: 1.5.w,
-                        viewportFraction: 0.474.w,
+                        aspectRatio: 1.7.w,
+                        viewportFraction: 0.442.w,
                         enableInfiniteScroll: false,
                         padEnds: false)),
               ),

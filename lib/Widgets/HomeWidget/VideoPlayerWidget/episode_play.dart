@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:main_ott/Theme/colors.dart';
 
 class EpisodePlay extends StatelessWidget {
   const EpisodePlay({Key? key}) : super(key: key);
@@ -31,22 +33,25 @@ class EpisodePlay extends StatelessWidget {
                 width: 200.w,
                 child: Row(
                   children: [
-                    SvgPicture.asset("assets/HomeAssets/playIcon.svg"),
+                    SvgPicture.asset(
+                      "assets/HomeAssets/playIcon.svg",
+                      width: 10.w,
+                    ),
                     SizedBox(
                       width: 10.w,
                     ),
-                    const Flexible(
+                    Flexible(
                       flex: 1,
                       fit: FlexFit.tight,
                       child: Text(
                         "Ep 1 - Lorem ipsum dummy text",
                         maxLines: 1,
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontFamily: "Poppins",
+                        style: GoogleFonts.poppins(
+                          fontSize: 12.w,
+                          color: whiteColor,
                           fontWeight: FontWeight.w500,
-                          overflow: TextOverflow.ellipsis,
                         ),
+                        overflow: TextOverflow.ellipsis,
                       ),
                     ),
                   ],
@@ -55,33 +60,33 @@ class EpisodePlay extends StatelessWidget {
               SizedBox(
                 height: 8.w,
               ),
-              const Padding(
+              Padding(
                 padding: EdgeInsets.only(left: 23.0),
                 child: Text(
                   "45 : 53 mins",
                   maxLines: 1,
-                  style: TextStyle(
-                    color: Colors.white60,
-                    fontFamily: "Poppins",
+                  style: GoogleFonts.poppins(
+                    fontSize: 12.w,
+                    color: whiteColor,
                     fontWeight: FontWeight.w500,
-                    overflow: TextOverflow.ellipsis,
                   ),
+                  overflow: TextOverflow.ellipsis,
                 ),
               ),
               SizedBox(
                 height: 8.w,
               ),
-              const Padding(
+              Padding(
                 padding: EdgeInsets.only(left: 23.0),
                 child: Text(
                   "Currently Playing",
                   maxLines: 1,
-                  style: TextStyle(
-                    color: Color(0xffC02739),
-                    fontFamily: "Poppins",
+                  style: GoogleFonts.poppins(
+                    fontSize: 12.w,
+                    color: primaryColor,
                     fontWeight: FontWeight.w500,
-                    overflow: TextOverflow.ellipsis,
                   ),
+                  overflow: TextOverflow.ellipsis,
                 ),
               ),
             ],

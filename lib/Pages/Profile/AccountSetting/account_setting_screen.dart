@@ -38,7 +38,7 @@ class AccountSettingScreen extends StatelessWidget {
                       ),
                       Positioned(
                         bottom: 10.h,
-                        left: 30.w,
+                        left: 35.w,
                         child: SvgPicture.asset(
                             "assets/ProfileAssets/AccountSetting/upload.svg"),
                       )
@@ -58,7 +58,7 @@ class AccountSettingScreen extends StatelessWidget {
                     "Personal Details",
                     style: GoogleFonts.poppins(
                         color: whiteColor.withOpacity(0.75),
-                        fontSize: 12.w,
+                        fontSize: 11.w,
                         decoration: TextDecoration.none,
                         fontWeight: FontWeight.w400),
                   ),
@@ -96,7 +96,7 @@ class AccountSettingScreen extends StatelessWidget {
                     "Billing Details",
                     style: GoogleFonts.poppins(
                         color: whiteColor.withOpacity(0.75),
-                        fontSize: 12.w,
+                        fontSize: 11.w,
                         decoration: TextDecoration.none,
                         fontWeight: FontWeight.w400),
                   ),
@@ -115,7 +115,7 @@ class AccountSettingScreen extends StatelessWidget {
                     "Upcoming billing date | 14 July 2023",
                     style: GoogleFonts.poppins(
                         color: whiteColor.withOpacity(0.5),
-                        fontSize: 12.w,
+                        fontSize: 11.w,
                         decoration: TextDecoration.none,
                         fontWeight: FontWeight.w400),
                   ),
@@ -131,7 +131,7 @@ class AccountSettingScreen extends StatelessWidget {
                     "Subscription Details",
                     style: GoogleFonts.poppins(
                         color: whiteColor.withOpacity(0.75),
-                        fontSize: 12.w,
+                        fontSize: 11.w,
                         decoration: TextDecoration.none,
                         fontWeight: FontWeight.w400),
                   ),
@@ -145,12 +145,12 @@ class AccountSettingScreen extends StatelessWidget {
                           style: GoogleFonts.poppins(
                               color: whiteColor,
                               fontWeight: FontWeight.w500,
-                              fontSize: 15.w)),
+                              fontSize: 14.w)),
                       Text("Premium",
                           style: GoogleFonts.poppins(
                               color: whiteColor,
                               fontWeight: FontWeight.w500,
-                              fontSize: 15.w)),
+                              fontSize: 14.w)),
                     ],
                   ),
                   SizedBox(
@@ -160,7 +160,7 @@ class AccountSettingScreen extends StatelessWidget {
                     "Expires on | 14 July 2023",
                     style: GoogleFonts.poppins(
                         color: whiteColor.withOpacity(0.5),
-                        fontSize: 12.w,
+                        fontSize: 11.w,
                         decoration: TextDecoration.none,
                         fontWeight: FontWeight.w400),
                   ),

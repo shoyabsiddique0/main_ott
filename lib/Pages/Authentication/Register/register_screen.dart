@@ -18,7 +18,7 @@ class RegisterScreen extends StatelessWidget {
     RegisterController controller = Get.find<RegisterController>();
     return SafeArea(
       child: Scaffold(
-        backgroundColor: blackColor,
+        backgroundColor: const Color(0xff1b1c1c),
         body: SingleChildScrollView(
           child: GestureDetector(
             onTap: () => FocusScope.of(context).unfocus(),
@@ -68,7 +68,7 @@ class RegisterScreen extends StatelessWidget {
                   ),
                   Container(
                       width: double.infinity,
-                      height: 50.h,
+                      height: 45.h,
                       padding: EdgeInsets.only(left: 24.w, right: 24.w),
                       child: ElevatedButton(
                           onPressed: () {},
@@ -77,7 +77,7 @@ class RegisterScreen extends StatelessWidget {
                           child: Text(
                             "Register",
                             style: GoogleFonts.poppins(
-                                fontSize: 16.w, fontWeight: FontWeight.w500),
+                                fontSize: 14.w, fontWeight: FontWeight.w500),
                           ))),
                   SizedBox(
                     height: 25.h,
@@ -113,7 +113,7 @@ class RegisterScreen extends StatelessWidget {
                   ),
                   Container(
                       width: double.infinity,
-                      height: 50.h,
+                      height: 45.h,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(8.w),
                           border: Border.all(color: primaryColor, width: 1.5)),
@@ -128,14 +128,14 @@ class RegisterScreen extends StatelessWidget {
                               Text(
                                 "Continue with Google  ",
                                 style: GoogleFonts.poppins(
-                                    fontSize: 16.w,
+                                    fontSize: 14.w,
                                     fontWeight: FontWeight.w500,
                                     color: primaryColor),
                               ),
                               SvgPicture.asset("assets/AuthAssets/google.svg"),
                             ],
                           ))),
-                  SizedBox(
+                  const SizedBox(
                     height: 40,
                   ),
                   Row(

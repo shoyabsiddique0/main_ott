@@ -13,15 +13,15 @@ class DownloadsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     DownloadsController controller = Get.find<DownloadsController>();
     return Scaffold(
-      backgroundColor: Color(0xff1C1B1B),
+      backgroundColor: const Color(0xff1C1B1B),
       appBar: AppBar(
         title: Text(
           "Downloads",
           style: GoogleFonts.poppins(
-              color: whiteColor, fontSize: 16.w, fontWeight: FontWeight.w500),
+              color: whiteColor, fontSize: 15.w, fontWeight: FontWeight.w500),
         ),
         centerTitle: true,
-        backgroundColor: Color(0xff1C1B1B),
+        backgroundColor: const Color(0xff1C1B1B),
         leading: GestureDetector(
           onTap: () => Get.back(),
           child: SvgPicture.asset(
@@ -33,11 +33,11 @@ class DownloadsScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(children: [
           Container(
-            height: 50.h,
+            height: 45.h,
             margin: EdgeInsets.only(
-                left: 24.w, right: 24.w, top: 24.h, bottom: 30.h),
+                left: 24.w, right: 24.w, top: 24.h, bottom: 15.h),
             decoration: BoxDecoration(
-                color: whiteColor.withOpacity(0.25),
+                color: whiteColor.withOpacity(0.1),
                 borderRadius: BorderRadius.all(Radius.circular(8.w))),
             child: TextFormField(
               expands: true,
@@ -49,14 +49,16 @@ class DownloadsScreen extends StatelessWidget {
                   prefixIcon: SvgPicture.asset(
                     "assets/NavBarAssets/search.svg",
                     fit: BoxFit.scaleDown,
+                    color: whiteColor.withOpacity(0.25),
                   ),
+                  contentPadding: EdgeInsets.zero,
                   suffixIcon: GestureDetector(
                     onTap: () {
                       Get.bottomSheet(Container(
-                        color: Color(0xff1b1c1c),
-                        height: 200.h,
+                        color: const Color(0xff1b1c1c),
+                        height: 170.h,
                         padding:
-                            EdgeInsets.only(top: 10.h, left: 24.w, right: 24.w),
+                            EdgeInsets.only(top: 20.h, left: 24.w, right: 24.w),
                         child: Obx(
                           () => Column(children: [
                             Row(
@@ -66,7 +68,7 @@ class DownloadsScreen extends StatelessWidget {
                                   "Sort By",
                                   style: GoogleFonts.poppins(
                                       color: whiteColor,
-                                      fontSize: 20.w,
+                                      fontSize: 14.w,
                                       fontWeight: FontWeight.w500),
                                 ),
                                 GestureDetector(
@@ -74,6 +76,9 @@ class DownloadsScreen extends StatelessWidget {
                                     child: SvgPicture.asset(
                                         "assets/HomeAssets/DetailsAssets/cross.svg"))
                               ],
+                            ),
+                            SizedBox(
+                              height: 10.h,
                             ),
                             Theme(
                               data:
@@ -84,19 +89,19 @@ class DownloadsScreen extends StatelessWidget {
                                     onTap: () => controller.groupValue.value =
                                         element["value"]!,
                                     child: ListTile(
+                                      visualDensity:
+                                          const VisualDensity(vertical: -4),
                                       leading: Text(
                                         element["title"]!,
                                         style: GoogleFonts.poppins(
                                             color: whiteColor,
-                                            fontSize: 16.w,
+                                            fontSize: 14.w,
                                             fontWeight: FontWeight.w400),
                                       ),
+                                      contentPadding: EdgeInsets.zero,
                                       trailing: Radio(
-                                        groupValue: controller.groupValue.value,
                                         activeColor: primaryColor,
-                                        focusColor: whiteColor,
-                                        overlayColor: MaterialStateProperty.all(
-                                            whiteColor),
+                                        groupValue: controller.groupValue.value,
                                         value: element["value"],
                                         onChanged: (value) => controller
                                             .groupValue
@@ -114,15 +119,16 @@ class DownloadsScreen extends StatelessWidget {
                     child: SvgPicture.asset(
                       "assets/ProfileAssets/WatchlistAssets/sort.svg",
                       fit: BoxFit.scaleDown,
+                      color: whiteColor,
                     ),
                   ),
                   hintText: "Search Here...",
                   hintStyle: GoogleFonts.poppins(
-                      color: whiteColor.withOpacity(0.5), fontSize: 18.w),
+                      color: whiteColor.withOpacity(0.5), fontSize: 14.w),
                   border: const OutlineInputBorder(),
                   focusedBorder: const OutlineInputBorder()),
               style: GoogleFonts.poppins(
-                  color: whiteColor.withOpacity(0.5), fontSize: 18.w),
+                  color: whiteColor.withOpacity(0.5), fontSize: 14.w),
             ),
           ),
           Column(

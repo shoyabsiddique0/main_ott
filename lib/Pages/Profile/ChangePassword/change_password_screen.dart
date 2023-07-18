@@ -4,7 +4,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:main_ott/Pages/Profile/ChangePassword/change_password_controller.dart';
-import 'package:main_ott/Routes/app_route.dart';
 import 'package:main_ott/Theme/colors.dart';
 import 'package:main_ott/Widgets/AuthWidget/custom_text_input.dart';
 
@@ -15,9 +14,9 @@ class ChangePassword extends StatelessWidget {
   Widget build(BuildContext context) {
     ChangePasswordController controller = Get.find<ChangePasswordController>();
     return Scaffold(
-      backgroundColor: Color(0xff1c1b1b),
+      backgroundColor: const Color(0xff1c1b1b),
       appBar: AppBar(
-          backgroundColor: Color(0xff1b1c1c),
+          backgroundColor: const Color(0xff1b1c1c),
           leading: GestureDetector(
             onTap: () => Get.back(),
             child: SvgPicture.asset(
@@ -29,7 +28,7 @@ class ChangePassword extends StatelessWidget {
           title: Text("Change Password",
               style: GoogleFonts.poppins(
                   color: whiteColor,
-                  fontSize: 16.w,
+                  fontSize: 15.w,
                   fontWeight: FontWeight.w500))),
       body: Container(
         padding: EdgeInsets.only(top: 36.h),
@@ -44,7 +43,7 @@ class ChangePassword extends StatelessWidget {
               isVisible: controller.isVisOld,
             ),
             SizedBox(
-              height: 20.h,
+              height: 10.h,
             ),
             CustomTextInput(
               controller: controller.newPass,
@@ -55,7 +54,7 @@ class ChangePassword extends StatelessWidget {
               isVisible: controller.isVisNew,
             ),
             SizedBox(
-              height: 20.h,
+              height: 10.h,
             ),
             CustomTextInput(
               controller: controller.confPass,
@@ -66,10 +65,10 @@ class ChangePassword extends StatelessWidget {
               isVisible: controller.isVisConf,
             ),
             SizedBox(
-              height: 30.h,
+              height: 20.h,
             ),
             Container(
-              height: 55.h,
+              height: 45.h,
               width: double.infinity,
               padding: EdgeInsets.only(left: 24.w, right: 24.w),
               child: ElevatedButton(
@@ -80,7 +79,7 @@ class ChangePassword extends StatelessWidget {
                     margin: EdgeInsets.only(
                         top: 230.h, bottom: 230.h, left: 60.w, right: 60.w),
                     decoration: BoxDecoration(
-                        color: Color(0xff1b1c1c),
+                        color: const Color(0xff1b1c1c),
                         borderRadius: BorderRadius.circular(8.r),
                         border: Border.all(color: whiteColor, width: 0.2.w)),
                     child: Stack(
@@ -91,7 +90,7 @@ class ChangePassword extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               CircleAvatar(
-                                  backgroundColor: Color(0xff383636),
+                                  backgroundColor: const Color(0xff383636),
                                   radius: 40.w,
                                   child: SvgPicture.asset(
                                       "assets/ProfileAssets/great.svg")),
@@ -128,14 +127,14 @@ class ChangePassword extends StatelessWidget {
                     ),
                   ));
                 },
-                child: Text("Update",
-                    style: GoogleFonts.poppins(
-                        color: whiteColor,
-                        fontSize: 16.h,
-                        fontWeight: FontWeight.w500)),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: primaryColor,
                 ),
+                child: Text("Update",
+                    style: GoogleFonts.poppins(
+                        color: whiteColor,
+                        fontSize: 13.h,
+                        fontWeight: FontWeight.w500)),
               ),
             )
           ],

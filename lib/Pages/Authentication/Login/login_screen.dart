@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:main_ott/Pages/Authentication/Login/login_controller.dart';
@@ -15,7 +16,7 @@ class LoginScreen extends StatelessWidget {
     LoginController controller = Get.find<LoginController>();
     return SafeArea(
       child: Scaffold(
-        backgroundColor: blackColor,
+        backgroundColor: Color(0xff1b1c1c),
         body: SingleChildScrollView(
           child: GestureDetector(
             onTap: () => FocusScope.of(context).unfocus(),
@@ -25,6 +26,7 @@ class LoginScreen extends StatelessWidget {
                 children: [
                   SizedBox(
                       height: 230.h,
+                      width: double.infinity,
                       child: Image.asset(
                         "assets/AuthAssets/camera.png",
                         fit: BoxFit.fill,
@@ -85,7 +87,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                   Container(
                       width: double.infinity,
-                      height: 50.h,
+                      height: 45.h,
                       padding: EdgeInsets.only(left: 24.w, right: 24.w),
                       child: ElevatedButton(
                           onPressed: () {

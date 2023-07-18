@@ -25,15 +25,13 @@ class CardView extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Stack(children: [
-            Image.asset(image),
+            SizedBox(height: 145.h, child: Image.asset(image)),
             Positioned(
               bottom: ScreenUtil.defaultSize.width * 0.02,
               right: ScreenUtil.defaultSize.width * 0.01,
               child: Text(
                 duration,
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: ScreenUtil.defaultSize.width * 0.03),
+                style: TextStyle(color: Color(0xff808082), fontSize: 10.w),
               ),
             )
           ]),

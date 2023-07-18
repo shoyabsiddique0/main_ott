@@ -27,7 +27,7 @@ class ForgotPasswordScreen extends StatelessWidget {
           ),
         ),
       ),
-      backgroundColor: blackColor,
+      backgroundColor: Color(0xff1b1c1c),
       body: GestureDetector(
         onTap: () => FocusScope.of(context).unfocus(),
         child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [

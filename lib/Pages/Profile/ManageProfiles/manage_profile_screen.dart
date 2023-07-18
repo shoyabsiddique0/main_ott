@@ -37,31 +37,43 @@ class ManageProfileScreen extends StatelessWidget {
         child: GridView.count(
           crossAxisCount: 2,
           crossAxisSpacing: 20.w,
-          mainAxisSpacing: 15.h,
+          mainAxisSpacing: 10.h,
           childAspectRatio: 3.w / 4.h,
           shrinkWrap: true,
           children: [
-            Profiles(goTo: () => Get.toNamed(AppRoutes.profileManageScreen),),
+            Profiles(
+              goTo: () => Get.toNamed(AppRoutes.profileManageScreen),
+            ),
             Profiles(goTo: () => Get.toNamed(AppRoutes.profileManageScreen)),
             Profiles(goTo: () => Get.toNamed(AppRoutes.profileManageScreen)),
             Profiles(goTo: () => Get.toNamed(AppRoutes.profileManageScreen)),
             Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
                   width: 100.w,
-                  height: 100.w,
+                  height: 105.w,
+                  margin: EdgeInsets.only(top: 10.h),
                   decoration: const BoxDecoration(color: blackColor),
                   child: SvgPicture.asset(
                     "assets/ProfileAssets/ManageProfiles/adduser.svg",
                     fit: BoxFit.scaleDown,
                   ),
                 ),
-                Text(
-                  "Add Profile",
-                  style: GoogleFonts.poppins(
-                      color: whiteColor,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 12.w),
+                SizedBox(
+                  height: 3.w,
+                ),
+                Container(
+                  margin: EdgeInsets.only(left: 20.w),
+                  // alignment: Alignment.center,
+                  child: Text(
+                    "Add Profile",
+                    style: GoogleFonts.poppins(
+                        color: whiteColor,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 12.w),
+                  ),
                 )
               ],
             )

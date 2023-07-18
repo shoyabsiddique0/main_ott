@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:main_ott/Theme/colors.dart';
 
 class Header extends StatelessWidget {
   final String title;
   final Widget child;
-  const Header({super.key, required this.title, required this.child});
+  final bool inverse;
+  const Header(
+      {super.key,
+      required this.title,
+      required this.child,
+      required this.inverse});
 
   @override
   Widget build(BuildContext context) {
@@ -22,21 +28,24 @@ class Header extends StatelessWidget {
                           TextSpan(
                               text: title.split(" ")[1],
                               style: TextStyle(
-                                  fontSize: ScreenUtil.defaultSize.width * 0.05,
-                                  color: Colors.white,
+                                  fontSize: 15.w,
+                                  color: inverse ? primaryColor : whiteColor,
                                   fontWeight: FontWeight.bold))
                         ],
                         style: TextStyle(
-                          fontSize: ScreenUtil.defaultSize.width * 0.05,
-                          color: const Color(0xffc02739),
+                          fontSize: 15.w,
+                          color: inverse ? whiteColor : primaryColor,
                           fontFamily: "Poppins",
                         ))),
                 TextButton(
                     onPressed: () {},
-                    child: const Text(
-                      "View All",
-                      style:
-                          TextStyle(fontFamily: "Poppins", color: Colors.grey),
+                    child: Text(
+                      "View all",
+                      style: TextStyle(
+                          fontFamily: "Poppins",
+                          fontWeight: FontWeight.w500,
+                          color: Colors.grey,
+                          fontSize: 12.w),
                     ))
               ],
             ),

@@ -14,10 +14,10 @@ class BottomNavigationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final bottomNavigationController = Get.find<BottomNavigationController>();
     return Scaffold(
-      backgroundColor: blackColor,
+      backgroundColor: const Color(0xff1b1c1c),
       extendBody: true,
       bottomNavigationBar: Obx(() => Theme(
-            data: ThemeData(canvasColor: Color(0xff1b1c1c)),
+            data: ThemeData(canvasColor: const Color(0xff1b1c1c)),
             child: SizedBox(
               width: double.infinity,
               height: 75.h,
@@ -33,16 +33,29 @@ class BottomNavigationScreen extends StatelessWidget {
                   BottomNavigationBar(
                     items: [
                       BottomNavigationBarItem(
-                        icon: SvgPicture.asset("assets/NavBarAssets/home.svg"),
+                        activeIcon:
+                            SvgPicture.asset("assets/NavBarAssets/home.svg"),
+                        icon: SvgPicture.asset(
+                          "assets/NavBarAssets/home.svg",
+                          color: Color(0xff8D8A8A),
+                        ),
                         label: "Home",
                       ),
                       BottomNavigationBarItem(
                           icon: SvgPicture.asset(
+                            "assets/NavBarAssets/category.svg",
+                            color: Color(0xff8D8A8A),
+                          ),
+                          activeIcon: SvgPicture.asset(
                               "assets/NavBarAssets/category.svg"),
                           label: "Category"),
                       BottomNavigationBarItem(
-                          icon: SvgPicture.asset(
+                          activeIcon: SvgPicture.asset(
                               "assets/NavBarAssets/search.svg"),
+                          icon: SvgPicture.asset(
+                            "assets/NavBarAssets/search.svg",
+                            color: Color(0xff8D8A8A),
+                          ),
                           label: "Search"),
                       BottomNavigationBarItem(
                           icon: ClipRRect(
@@ -65,7 +78,11 @@ class BottomNavigationScreen extends StatelessWidget {
                     selectedFontSize: 12.sp,
                     unselectedFontSize: 12.sp,
                     onTap: (int index) {
-                      bottomNavigationController.pageIndex.value = index;
+                      if (index == 2) {
+                        Get.toNamed(AppRoutes.searchScreeen);
+                      } else {
+                        bottomNavigationController.pageIndex.value = index;
+                      }
                     },
                     showUnselectedLabels: false,
                     selectedLabelStyle: GoogleFonts.poppins(

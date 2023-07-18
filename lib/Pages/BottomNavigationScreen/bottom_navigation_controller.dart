@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:main_ott/Pages/Category/category_screen.dart';
 import 'package:main_ott/Pages/Home/home_screen.dart';
@@ -9,6 +10,7 @@ class BottomNavigationController extends GetxController {
   final pages = [
     const HomeScreen(),
     const CategoryScreen(),
+    // Text(""),
     const SearchScreen(),
     const ProfileScreen()
   ].obs;

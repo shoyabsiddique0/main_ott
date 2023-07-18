@@ -19,7 +19,7 @@ class CategoryCard extends StatelessWidget {
             left: 10.w,
             child: Text(
               title,
-              style: GoogleFonts.poppins(color: whiteColor),
+              style: GoogleFonts.poppins(color: whiteColor, fontSize: 11.w),
             ))
       ],
     );

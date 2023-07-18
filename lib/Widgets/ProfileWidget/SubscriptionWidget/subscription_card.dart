@@ -31,7 +31,7 @@ class SubscriptionCard extends StatelessWidget {
           alignment: Alignment.bottomCenter,
           children: [
             Container(
-              margin: EdgeInsets.only(left: 24.w, right: 24.w, top: 10.h),
+              margin: EdgeInsets.only(left: 24.w, right: 24.w, top: 13.h),
               padding: EdgeInsets.only(
                   left: 10.w, right: 20.w, top: 10.h, bottom: 10.h),
               height: 88.h,
@@ -108,6 +108,7 @@ class SubscriptionCard extends StatelessWidget {
                         "assets/ProfileAssets/AccountSetting/bestValue.svg",
                         fit: BoxFit.scaleDown,
                         cacheColorFilter: true,
+                        width: 100.w,
                       )
                     : const SizedBox.shrink())
           ],

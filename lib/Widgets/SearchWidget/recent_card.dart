@@ -19,7 +19,7 @@ class RecentCard extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(
-          width: 110.w,
+          width: 100.w,
           height: 70.h,
           child: Stack(
             fit: StackFit.passthrough,
@@ -31,7 +31,7 @@ class RecentCard extends StatelessWidget {
                   child: GestureDetector(
                     onTap: onClick,
                     child: SizedBox(
-                        width: 100.w,
+                        width: 90.w,
                         height: 65.h,
                         child: Image.asset(imageLink)),
                   ),
@@ -44,10 +44,16 @@ class RecentCard extends StatelessWidget {
             ],
           ),
         ),
-        Text(
-          title,
-          style: GoogleFonts.poppins(
-              color: whiteColor, fontSize: 10.w, fontWeight: FontWeight.w500),
+        Container(
+          padding: EdgeInsets.only(left: 3.w),
+          child: Text(
+            title,
+            style: GoogleFonts.poppins(
+              color: whiteColor,
+              fontSize: 8.w,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
         )
       ],
     );

@@ -25,75 +25,46 @@ class Suggestion extends StatelessWidget {
             foregroundDecoration: const BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  Colors.black,
+                  Color(0xff1b1c1c),
                   Colors.transparent,
                 ],
                 begin: Alignment.bottomCenter,
                 end: Alignment.topCenter,
-                stops: [0, 0.05],
+                stops: [0, 0.3],
               ),
             ),
             child: Image.asset(imageLink)),
-        // Positioned(
-        //     top: 50.h,
-        //     right: 25.w,
-        //     child: ClipRRect(
-        //       borderRadius: BorderRadius.circular(8),
-        //       child: BackdropFilter(
-        //         filter: ImageFilter.blur(sigmaX: 6.0, sigmaY: 6.0),
-        //         child: Container(
-        //           color: whiteColor.withOpacity(0.25),
-        //           width: 100.0.w,
-        //           height: 40.0.w,
-        //           child: Row(
-        //             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        //             children: [
-        //               SvgPicture.asset(
-        //                 "assets/HomeAssets/subscribe.svg",
-        //                 fit: BoxFit.scaleDown,
-        //               ),
-        //               Text(
-        //                 "Subscribe",
-        //                 style: GoogleFonts.poppins(
-        //                     color: whiteColor,
-        //                     fontSize: 12.w,
-        //                     fontWeight: FontWeight.w500),
-        //               )
-        //             ],
-        //           ),
-        //         ),
-        //       ),
-        //     )),
         Positioned(
-            bottom: 98.h,
+            bottom: 80.h,
             left: 25.2.w,
             child: SvgPicture.asset(
               "assets/HomeAssets/playIcon.svg",
               fit: BoxFit.fill,
+              width: 12.w,
             )),
         Positioned(
-            bottom: 92.h,
+            bottom: 75.h,
             left: 45.4.w,
             child: Text(
               title,
               style: GoogleFonts.poppins(
                   color: whiteColor,
-                  fontSize: 21.6.w,
-                  fontWeight: FontWeight.w700),
+                  fontSize: 19.6.w,
+                  fontWeight: FontWeight.w500),
             )),
         Positioned(
-            bottom: 72.h,
+            bottom: 58.h,
             left: 25.w,
             child: Text(duration,
                 style: GoogleFonts.poppins(
                   color: whiteColor.withOpacity(0.5),
-                  fontSize: 10.8.w,
+                  fontSize: 8.8.w,
                 ))),
         Positioned(
-            bottom: 21.5.h,
+            bottom: 3.5.h,
             left: 25.w,
             child: SizedBox(
-              width: 140.w,
+              width: 170.w,
               child: ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
@@ -106,24 +77,30 @@ class Suggestion extends StatelessWidget {
               ),
             )),
         Positioned(
-            bottom: 18.h,
-            right: 120.w,
+            bottom: 0.h,
+            right: 90.w,
             child: TextButton(
               onPressed: () {},
               style: TextButton.styleFrom(
                 backgroundColor: Colors.transparent,
               ),
-              child: SvgPicture.asset("assets/HomeAssets/add.svg"),
+              child: SvgPicture.asset(
+                "assets/HomeAssets/add.svg",
+                width: 38.w,
+              ),
             )),
         Positioned(
-            bottom: 18.h,
-            right: 60.w,
+            bottom: 0.h,
+            right: 30.w,
             child: TextButton(
               onPressed: () {},
               style: TextButton.styleFrom(
                 backgroundColor: Colors.transparent,
               ),
-              child: SvgPicture.asset("assets/HomeAssets/forward.svg"),
+              child: SvgPicture.asset(
+                "assets/HomeAssets/forward.svg",
+                width: 38.w,
+              ),
             )),
       ],
     );

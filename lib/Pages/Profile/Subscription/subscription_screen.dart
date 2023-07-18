@@ -80,14 +80,14 @@ class SubscriptionScreen extends StatelessWidget {
                   )),
               Positioned(
                   right: 0,
-                  top: 80.h,
+                  top: 30.h,
                   child: SvgPicture.asset(
                     "assets/ProfileAssets/AccountSetting/popcorn.svg",
                     width: 130.w,
                     height: 150.h,
                   )),
               Container(
-                  margin: EdgeInsets.only(top: 150.h),
+                  margin: EdgeInsets.only(top: 190.h),
                   child: Column(
                     children: [
                       SubscriptionCard(
@@ -148,7 +148,7 @@ class SubscriptionScreen extends StatelessWidget {
                         child: ElevatedButton(
                             onPressed: () {},
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Color(0xffC02739),
+                              backgroundColor: primaryColor,
                               elevation: 0,
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(6.w)),
@@ -161,14 +161,16 @@ class SubscriptionScreen extends StatelessWidget {
                                   "Subscribe",
                                   style: GoogleFonts.poppins(
                                       color: whiteColor,
-                                      fontSize: 24.w,
+                                      fontSize: 22.w,
                                       fontWeight: FontWeight.w500),
                                 ),
                                 SizedBox(
                                   width: 10.w,
                                 ),
                                 SvgPicture.asset(
-                                    "assets/ProfileAssets/AccountSetting/rocket.svg"),
+                                  "assets/ProfileAssets/AccountSetting/rocket.svg",
+                                  width: 20.w,
+                                ),
                               ],
                             )),
                       ),

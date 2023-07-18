@@ -32,7 +32,7 @@ class CustomTextInput extends StatelessWidget {
         children: [
           Container(
             decoration: BoxDecoration(
-                color: const Color(0x2fffffff),
+                color: whiteColor.withOpacity(0.1),
                 borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(10.w),
                     topRight: Radius.circular(10.w)),
@@ -44,7 +44,7 @@ class CustomTextInput extends StatelessWidget {
                   top: const BorderSide(color: Color(0xff5c5c5c), width: 0),
                   right: const BorderSide(color: Color(0xff5c5c5c), width: 0),
                 )),
-            height: 48.h,
+            height: 45.h,
             child: Obx(
               () => TextFormField(
                 controller: controller.value,
@@ -52,7 +52,8 @@ class CustomTextInput extends StatelessWidget {
                 obscureText: inputType == TextInputType.visiblePassword
                     ? isVisible!.value
                     : false,
-                style: GoogleFonts.poppins(color: Colors.white),
+                style:
+                    GoogleFonts.poppins(color: Colors.white, fontSize: 13.5.w),
                 expands: !(inputType == TextInputType.visiblePassword),
                 maxLines: inputType == TextInputType.visiblePassword ? 1 : null,
                 minLines: inputType == TextInputType.visiblePassword ? 1 : null,
@@ -71,8 +72,8 @@ class CustomTextInput extends StatelessWidget {
                                   "assets/AuthAssets/eye_open.svg"))
                       : null,
                   prefixIcon: prefix,
-                  hintStyle:
-                      GoogleFonts.poppins(color: whiteColor.withOpacity(0.25)),
+                  hintStyle: GoogleFonts.poppins(
+                      color: whiteColor.withOpacity(0.25), fontSize: 13.5.w),
                   hintText: hintText,
                   border: OutlineInputBorder(
                       borderSide: const BorderSide(

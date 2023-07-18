@@ -16,7 +16,7 @@ class Plans extends StatelessWidget {
         Text(
           "Lorem ipsum domet - dummy text",
           style: GoogleFonts.poppins(
-              color: whiteColor.withOpacity(0.75), fontSize: 9.w),
+              color: whiteColor.withOpacity(0.75), fontSize: 12.w),
         )
       ],
     );

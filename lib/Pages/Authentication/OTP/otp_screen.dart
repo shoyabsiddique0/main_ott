@@ -13,7 +13,7 @@ class OtpScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     OtpController controller = Get.find<OtpController>();
     return Scaffold(
-      backgroundColor: blackColor,
+      backgroundColor: Color(0xff1b1c1c),
       body: SingleChildScrollView(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),

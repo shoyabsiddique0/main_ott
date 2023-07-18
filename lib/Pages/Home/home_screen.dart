@@ -16,7 +16,7 @@ class HomeScreen extends StatelessWidget {
         CarouselSlider(
           items: homeController.suggestionList,
           options: CarouselOptions(
-              aspectRatio: 0.782.w,
+              aspectRatio: 0.89.w,
               // ScreenUtil.defaultSize.width *
               // 1.8 /
               // ScreenUtil.defaultSize.height,
@@ -34,10 +34,10 @@ class HomeScreen extends StatelessWidget {
                   onTap: () =>
                       homeController.controller.animateToPage(entry.key),
                   child: Container(
-                    width: 6.0,
-                    height: 6.0,
-                    margin: const EdgeInsets.symmetric(
-                        vertical: 8.0, horizontal: 4.0),
+                    width: 5.0.w,
+                    height: 5.0.w,
+                    margin: EdgeInsets.symmetric(
+                        vertical: 8.0.w, horizontal: 3.0.h),
                     decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         color: (Theme.of(context).brightness == Brightness.dark
@@ -52,30 +52,33 @@ class HomeScreen extends StatelessWidget {
               }).toList(),
             )),
         const SizedBox(
-          height: 20,
+          height: 10,
         ),
         Header(
           title: "Continue Watching",
+          inverse: false,
           child: CarouselSlider(
               items: homeController.trendingList,
               options: CarouselOptions(
-                  aspectRatio: 1.5.w,
-                  viewportFraction: 0.474.w,
+                  aspectRatio: 1.7.w,
+                  viewportFraction: 0.442.w,
                   enableInfiniteScroll: false,
                   padEnds: false)),
         ),
         Header(
+          inverse: false,
           title: "Trending Now",
           child: CarouselSlider(
               items: homeController.recentList,
               options: CarouselOptions(
-                  aspectRatio: 1.5.w,
-                  viewportFraction: 0.474.w,
+                  aspectRatio: 1.7.w,
+                  viewportFraction: 0.442.w,
                   enableInfiniteScroll: false,
                   padEnds: false)),
         ),
         Header(
           title: "Featured Collection",
+          inverse: true,
           child: Column(
             children: [
               Container(
@@ -84,7 +87,7 @@ class HomeScreen extends StatelessWidget {
                 child: CarouselSlider(
                     items: homeController.collectionList1,
                     options: CarouselOptions(
-                        aspectRatio: 16 / 9,
+                        aspectRatio: 2.5.w,
                         onPageChanged: (index, reason) {
                           homeController.collection1.value = index;
                         },
@@ -97,10 +100,10 @@ class HomeScreen extends StatelessWidget {
                         .entries
                         .map((entry) {
                       return Container(
-                        width: 6.0,
-                        height: 6.0,
-                        margin: const EdgeInsets.symmetric(
-                            vertical: 8.0, horizontal: 4.0),
+                        width: 5.0.w,
+                        height: 5.0.w,
+                        margin: EdgeInsets.symmetric(
+                            vertical: 8.0.w, horizontal: 3.0.w),
                         decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             color: (Theme.of(context).brightness ==
@@ -118,16 +121,18 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
         Header(
+          inverse: false,
           title: "Recently Added",
           child: CarouselSlider(
               items: homeController.trendingList,
               options: CarouselOptions(
-                  aspectRatio: 1.5.w,
-                  viewportFraction: 0.474.w,
+                  aspectRatio: 1.7.w,
+                  viewportFraction: 0.442.w,
                   enableInfiniteScroll: false,
                   padEnds: false)),
         ),
         Header(
+          inverse: true,
           title: "Featured Collection",
           child: Column(
             children: [
@@ -137,7 +142,7 @@ class HomeScreen extends StatelessWidget {
                 child: CarouselSlider(
                     items: homeController.collectionList2,
                     options: CarouselOptions(
-                        aspectRatio: 16 / 9,
+                        aspectRatio: 2.5.w,
                         onPageChanged: (index, reason) {
                           homeController.collection2.value = index;
                         },
@@ -150,10 +155,10 @@ class HomeScreen extends StatelessWidget {
                         .entries
                         .map((entry) {
                       return Container(
-                        width: 6.0,
-                        height: 6.0,
-                        margin: const EdgeInsets.symmetric(
-                            vertical: 8.0, horizontal: 4.0),
+                        width: 5.0.w,
+                        height: 5.0.w,
+                        margin: EdgeInsets.symmetric(
+                            vertical: 8.0.w, horizontal: 3.0.w),
                         decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             color: (Theme.of(context).brightness ==
@@ -171,12 +176,13 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
         Header(
+            inverse: false,
             title: "Upcoming Series",
             child: CarouselSlider(
                 items: homeController.recentList,
                 options: CarouselOptions(
-                    aspectRatio: 1.5.w,
-                    viewportFraction: 0.474.w,
+                    aspectRatio: 1.7.w,
+                    viewportFraction: 0.442.w,
                     enableInfiniteScroll: false,
                     padEnds: false))),
         SizedBox(

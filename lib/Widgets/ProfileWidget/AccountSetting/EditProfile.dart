@@ -19,7 +19,7 @@ class EditProfile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return GestureDetector(
       onTap: onTap,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -41,7 +41,7 @@ class EditProfile extends StatelessWidget {
                 style: GoogleFonts.poppins(
                     color: color ?? whiteColor,
                     fontWeight: FontWeight.w500,
-                    fontSize: 15.w),
+                    fontSize: 14.w),
               ),
             ],
           ),

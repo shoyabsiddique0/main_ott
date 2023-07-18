@@ -27,7 +27,7 @@ class ProfileManageScreen extends StatelessWidget {
         title: Text(
           "Manage Profiles",
           style: GoogleFonts.poppins(
-              color: whiteColor, fontSize: 16.w, fontWeight: FontWeight.w500),
+              color: whiteColor, fontSize: 14.w, fontWeight: FontWeight.w500),
         ),
         centerTitle: true,
       ),
@@ -64,7 +64,7 @@ class ProfileManageScreen extends StatelessWidget {
                 title: "Nico Robin",
                 onTap: () {}),
             SizedBox(
-              height: 30.h,
+              height: 25.h,
             ),
             ProfileList(
               imageLink: "assets/ProfileAssets/pass.svg",
@@ -72,7 +72,7 @@ class ProfileManageScreen extends StatelessWidget {
               onTap: () => Get.toNamed(AppRoutes.changePasswordScreen),
             ),
             SizedBox(
-              height: 25.h,
+              height: 20.h,
             ),
             EditProfile(
                 imageLink: "assets/ProfileAssets/family.svg",
@@ -102,7 +102,7 @@ class ProfileManageScreen extends StatelessWidget {
                 ),
                 onTap: () {}),
             SizedBox(
-              height: 25.h,
+              height: 20.h,
             ),
             EditProfile(
                 imageLink: "assets/ProfileAssets/delete.svg",

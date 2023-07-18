@@ -24,8 +24,8 @@ class WatchlistCard extends StatelessWidget {
       margin: EdgeInsets.only(left: 24.w, right: 24.w),
       padding: EdgeInsets.only(bottom: 20.w),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
+        // mainAxisAlignment: MainAxisAlignment.start,
+        // crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
               width: 140.w,
@@ -47,135 +47,147 @@ class WatchlistCard extends StatelessWidget {
                 ],
               )),
           SizedBox(
-            width: 10.w,
+            width: 15.w,
           ),
-          Container(
-            margin: EdgeInsets.only(top: 15.h),
-            width: 150.w,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Row(
-                      children: [
-                        SvgPicture.asset("assets/HomeAssets/playIcon.svg"),
-                        SizedBox(
-                          width: 5.w,
-                        ),
-                        Text(
-                          title,
-                          style: GoogleFonts.poppins(
-                              fontSize: 14.w,
-                              fontWeight: FontWeight.w500,
-                              color: whiteColor),
-                        )
-                      ],
-                    ),
-                    SizedBox(
-                      height: 5.h,
-                    ),
-                    Text(
-                      duration,
-                      style: GoogleFonts.poppins(
-                          fontSize: 10.w, color: whiteColor.withOpacity(0.75)),
-                    ),
-                    SizedBox(
-                      height: 5.h,
-                    ),
-                    Text(
-                      left,
-                      style: GoogleFonts.poppins(
-                          fontSize: 12.w, color: whiteColor),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
-          Container(
-              margin: EdgeInsets.only(top: 15.h),
-              child: GestureDetector(
-                  onTap: () {
-                    Get.bottomSheet(Container(
-                      height: 140.h,
-                      padding:
-                          EdgeInsets.only(left: 24.w, right: 24.w, top: 10.w),
-                      color: const Color(0xff1b1c1c),
-                      child: Column(
+          Expanded(
+            child: Container(
+              margin: EdgeInsets.only(top: 5.h),
+              // width: 150.w,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
                         children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                title,
-                                style: GoogleFonts.poppins(
-                                    color: whiteColor,
-                                    fontSize: 20.w,
-                                    fontWeight: FontWeight.w500),
-                              ),
-                              GestureDetector(
-                                onTap: () => Get.back(),
-                                child: SvgPicture.asset(
-                                    "assets/HomeAssets/DetailsAssets/cross.svg"),
-                              )
-                            ],
+                          SvgPicture.asset(
+                            "assets/HomeAssets/playIcon.svg",
+                            width: 10.w,
                           ),
                           SizedBox(
-                            height: 23.w,
+                            width: 5.w,
                           ),
-                          Row(
-                            children: [
-                              SvgPicture.asset(
-                                  "assets/HomeAssets/playIcon.svg"),
-                              SizedBox(
-                                width: 5.w,
-                              ),
-                              Text(
-                                "Watch Now",
-                                style: GoogleFonts.poppins(
-                                    fontSize: 16.w,
-                                    color: whiteColor,
-                                    fontWeight: FontWeight.w400),
-                              )
-                            ],
-                          ),
-                          SizedBox(
-                            height: 16.w,
-                          ),
-                          Row(
-                            children: [
-                              SvgPicture.asset(
-                                  "assets/ProfileAssets/WatchlistAssets/delete.svg"),
-                              SizedBox(
-                                width: 5.w,
-                              ),
-                              Text(
-                                isDownloads
-                                    ? "Remove From Downloads"
-                                    : "Remove From Watchlist",
-                                style: GoogleFonts.poppins(
-                                    fontSize: 16.w,
-                                    color: whiteColor,
-                                    fontWeight: FontWeight.w400),
-                              )
-                            ],
+                          Text(
+                            title,
+                            style: GoogleFonts.poppins(
+                                fontSize: 12.5.w,
+                                fontWeight: FontWeight.w500,
+                                color: whiteColor),
                           ),
                         ],
                       ),
-                    ));
-                  },
-                  child: SizedBox(
-                    height: 24.h,
-                    width: 12.w,
-                    child: SvgPicture.asset(
-                      "assets/ProfileAssets/WatchlistAssets/option.svg",
-                      fit: BoxFit.scaleDown,
-                    ),
-                  ))),
+                      GestureDetector(
+                        onTap: () {
+                          Get.bottomSheet(Container(
+                            height: 130.h,
+                            padding: EdgeInsets.only(
+                                left: 24.w, right: 24.w, top: 10.w),
+                            color: const Color(0xff1b1c1c),
+                            child: Column(
+                              children: [
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      title,
+                                      style: GoogleFonts.poppins(
+                                          color: whiteColor,
+                                          fontSize: 18.w,
+                                          fontWeight: FontWeight.w500),
+                                    ),
+                                    GestureDetector(
+                                      onTap: () => Get.back(),
+                                      child: SvgPicture.asset(
+                                          "assets/HomeAssets/DetailsAssets/cross.svg"),
+                                    )
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: 23.w,
+                                ),
+                                Row(
+                                  children: [
+                                    SvgPicture.asset(
+                                      "assets/HomeAssets/playIcon.svg",
+                                      width: 12.w,
+                                    ),
+                                    SizedBox(
+                                      width: 5.w,
+                                    ),
+                                    Text(
+                                      "Watch Now",
+                                      style: GoogleFonts.poppins(
+                                          fontSize: 14.w,
+                                          color: whiteColor,
+                                          fontWeight: FontWeight.w400),
+                                    )
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: 16.w,
+                                ),
+                                Row(
+                                  children: [
+                                    SvgPicture.asset(
+                                      "assets/ProfileAssets/WatchlistAssets/delete.svg",
+                                      width: 12.w,
+                                    ),
+                                    SizedBox(
+                                      width: 5.w,
+                                    ),
+                                    Text(
+                                      isDownloads
+                                          ? "Remove From Downloads"
+                                          : "Remove From Watchlist",
+                                      style: GoogleFonts.poppins(
+                                          fontSize: 14.w,
+                                          color: whiteColor,
+                                          fontWeight: FontWeight.w400),
+                                    )
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ));
+                        },
+                        child: Container(
+                          padding: EdgeInsets.only(left: 30.w),
+                          child: SizedBox(
+                            height: 14.h,
+                            width: 12.w,
+                            child: SvgPicture.asset(
+                              "assets/ProfileAssets/WatchlistAssets/option.svg",
+                              fit: BoxFit.fitHeight,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 5.h,
+                  ),
+                  Text(
+                    duration,
+                    style: GoogleFonts.poppins(
+                        fontSize: 8.w, color: whiteColor.withOpacity(0.5)),
+                  ),
+                  SizedBox(
+                    height: 5.h,
+                  ),
+                  Text(
+                    "$left left",
+                    style: GoogleFonts.poppins(
+                        fontSize: 10.w, color: whiteColor.withOpacity(0.75)),
+                  ),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     );

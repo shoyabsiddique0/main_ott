@@ -76,4 +76,10 @@ class SearchScreenController extends GetxController {
       action: () {},
     ),
   ].obs;
+  @override
+  void onClose() {
+    print("onclose");
+    Get.lazyPut(() => SearchScreenController());
+    super.onClose();
+  }
 }

@@ -11,7 +11,7 @@ class VideoScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Color(0xff1b1c1c),
       resizeToAvoidBottomInset: false,
       body: SingleChildScrollView(
         child: Column(
@@ -24,19 +24,21 @@ class VideoScreen extends StatelessWidget {
               children: [
                 Container(
                   padding: EdgeInsets.only(top: 20.w, left: 20.w, right: 20.w),
-                  child: const Column(
+                  child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         "50 Shades of Grey",
                         style: TextStyle(
                             color: Colors.white,
+                            fontSize: 13.5.w,
                             fontFamily: "Poppins",
                             fontWeight: FontWeight.w500),
                       ),
                       Text(
                         "Season 1 / 10 Episode",
                         style: TextStyle(
+                            fontSize: 13.5.w,
                             color: Colors.white70,
                             fontFamily: "Poppins",
                             fontWeight: FontWeight.w500),
@@ -45,7 +47,7 @@ class VideoScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 25.w,
+                  height: 20.w,
                 ),
                 Padding(
                   padding: EdgeInsets.only(left: 25.w, right: 20.w),
@@ -53,7 +55,7 @@ class VideoScreen extends StatelessWidget {
                     'Episode List',
                     style: TextStyle(
                       color: Colors.white70,
-                      fontSize: 20.w,
+                      fontSize: 18.w,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
