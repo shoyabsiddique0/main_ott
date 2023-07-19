@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:main_ott/Routes/app_route.dart';
+import 'package:main_ott/Widgets/HomeWidget/DetailsWidget/episode.dart';
 import 'package:main_ott/Widgets/HomeWidget/cardView.dart';
 import 'package:video_player/video_player.dart';
 
@@ -91,6 +92,26 @@ class DetailsController extends GetxController {
       duration: "2hrs 30mins",
       image: "assets/HomeAssets/card2.png",
       action: () => Get.toNamed(AppRoutes.detailsScreen),
+    ),
+  ].obs;
+  var episodeList = <Widget>[
+    Episode(
+      epName: "Ep 1 - Lorem ipsum",
+      goTo: () {
+        Get.toNamed(AppRoutes.videoScreen);
+      },
+    ),
+    Episode(
+      epName: "Ep 2 - Lorem ipsum",
+      goTo: () {
+        Get.toNamed(AppRoutes.videoScreen);
+      },
+    ),
+    Episode(
+      epName: "Ep 3 - Lorem ipsum",
+      goTo: () {
+        Get.toNamed(AppRoutes.videoScreen);
+      },
     ),
   ].obs;
 }

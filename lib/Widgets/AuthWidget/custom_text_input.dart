@@ -60,6 +60,7 @@ class CustomTextInput extends StatelessWidget {
                 keyboardType: inputType,
                 onChanged: (value) => validateFunc(value),
                 decoration: InputDecoration(
+                  contentPadding: EdgeInsets.only(top: 4.h, left: 10.w),
                   isDense: true,
                   suffixIcon: inputType == TextInputType.visiblePassword
                       ? TextButton(

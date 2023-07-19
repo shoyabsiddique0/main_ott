@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:main_ott/Pages/Home/home_controller.dart';
@@ -51,30 +52,38 @@ class HomeScreen extends StatelessWidget {
                 );
               }).toList(),
             )),
-        const SizedBox(
-          height: 10,
-        ),
+        // SizedBox(
+        //   height: 5.h,
+        // ),
         Header(
           title: "Continue Watching",
           inverse: false,
-          child: CarouselSlider(
-              items: homeController.trendingList,
-              options: CarouselOptions(
-                  aspectRatio: 1.7.w,
-                  viewportFraction: 0.442.w,
-                  enableInfiniteScroll: false,
-                  padEnds: false)),
+          child: SizedBox(
+            height: 165.h,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) => Padding(
+                padding: EdgeInsets.only(right: 8.0.w),
+                child: homeController.trendingList[index],
+              ),
+              itemCount: homeController.trendingList.length,
+            ),
+          ),
         ),
         Header(
           inverse: false,
           title: "Trending Now",
-          child: CarouselSlider(
-              items: homeController.recentList,
-              options: CarouselOptions(
-                  aspectRatio: 1.7.w,
-                  viewportFraction: 0.442.w,
-                  enableInfiniteScroll: false,
-                  padEnds: false)),
+          child: SizedBox(
+            height: 165.h,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) => Padding(
+                padding: EdgeInsets.only(right: 8.0.w),
+                child: homeController.recentList[index],
+              ),
+              itemCount: homeController.recentList.length,
+            ),
+          ),
         ),
         Header(
           title: "Featured Collection",
@@ -123,13 +132,17 @@ class HomeScreen extends StatelessWidget {
         Header(
           inverse: false,
           title: "Recently Added",
-          child: CarouselSlider(
-              items: homeController.trendingList,
-              options: CarouselOptions(
-                  aspectRatio: 1.7.w,
-                  viewportFraction: 0.442.w,
-                  enableInfiniteScroll: false,
-                  padEnds: false)),
+          child: SizedBox(
+            height: 165.h,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) => Padding(
+                padding: EdgeInsets.only(right: 8.0.w),
+                child: homeController.trendingList[index],
+              ),
+              itemCount: homeController.trendingList.length,
+            ),
+          ),
         ),
         Header(
           inverse: true,
@@ -176,15 +189,27 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
         Header(
-            inverse: false,
-            title: "Upcoming Series",
-            child: CarouselSlider(
-                items: homeController.recentList,
-                options: CarouselOptions(
-                    aspectRatio: 1.7.w,
-                    viewportFraction: 0.442.w,
-                    enableInfiniteScroll: false,
-                    padEnds: false))),
+          inverse: false,
+          title: "Upcoming Series",
+          // child: CarouselSlider(
+          //     items: homeController.recentList,
+          //     options: CarouselOptions(
+          //         aspectRatio: 1.7.w,
+          //         viewportFraction: 0.442.w,
+          //         enableInfiniteScroll: false,
+          //         padEnds: false))
+          child: SizedBox(
+            height: 165.h,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) => Padding(
+                padding: EdgeInsets.only(right: 8.0.w),
+                child: homeController.recentList[index],
+              ),
+              itemCount: homeController.recentList.length,
+            ),
+          ),
+        ),
         SizedBox(
           height: 70.h,
         )

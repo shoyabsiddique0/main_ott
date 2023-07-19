@@ -45,10 +45,13 @@ class DetailsScreen extends StatelessWidget {
                       child: VisibilityDetector(
                           key: detailsController.vidFocus.value,
                           onVisibilityChanged: (info) {
-                            if (info.visibleFraction < 0.3) {
+                            if (info.visibleFraction < 0.7) {
                               detailsController.controller.pause();
                             } else {
-                              detailsController.controller.play();
+                              if (detailsController.controller.value.position !=
+                                  detailsController.controller.value.duration) {
+                                detailsController.controller.play();
+                              }
                             }
                           },
                           child: VideoPlayer(detailsController.controller))),
@@ -115,7 +118,8 @@ class DetailsScreen extends StatelessWidget {
                           Row(
                             children: [
                               TextButton(
-                                onPressed: () {},
+                                onPressed: () =>
+                                    Get.toNamed(AppRoutes.videoScreen),
                                 style: TextButton.styleFrom(
                                   backgroundColor: Colors.transparent,
                                 ),
@@ -376,7 +380,8 @@ class DetailsScreen extends StatelessWidget {
                 ],
               ),
               Container(
-                  padding: EdgeInsets.only(left: 25.w, right: 25.w),
+                  padding: EdgeInsets.only(
+                      left: ScreenUtil.defaultSize.width * 0.05, right: 25.w),
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -396,42 +401,59 @@ class DetailsScreen extends StatelessWidget {
                           height: 16.w,
                         ),
                       ])),
-              CarouselSlider(
-                  items: [
-                    Episode(
-                      epName: "Ep 1 - Lorem ipsum",
-                      goTo: () {
-                        Get.toNamed(AppRoutes.videoScreen);
-                      },
-                    ),
-                    Episode(
-                      epName: "Ep 2 - Lorem ipsum",
-                      goTo: () {
-                        Get.toNamed(AppRoutes.videoScreen);
-                      },
-                    ),
-                    Episode(
-                      epName: "Ep 3 - Lorem ipsum",
-                      goTo: () {
-                        Get.toNamed(AppRoutes.videoScreen);
-                      },
-                    ),
-                  ],
-                  options: CarouselOptions(
-                      viewportFraction: 0.459.w,
-                      padEnds: false,
-                      enableInfiniteScroll: false,
-                      aspectRatio: 2.9.w)),
+              Container(
+                padding: EdgeInsets.only(
+                    left: ScreenUtil.defaultSize.width * 0.05 - 8.w),
+                height: 115.h,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: ((context, index) => Padding(
+                        padding: EdgeInsets.only(left: 8.0.w),
+                        child: detailsController.episodeList[index],
+                      )),
+                  itemCount: detailsController.episodeList.length,
+                ),
+              ),
+              // CarouselSlider(
+              //     items: [
+              //       Episode(
+              //         epName: "Ep 1 - Lorem ipsum",
+              //         goTo: () {
+              //           Get.toNamed(AppRoutes.videoScreen);
+              //         },
+              //       ),
+              //       Episode(
+              //         epName: "Ep 2 - Lorem ipsum",
+              //         goTo: () {
+              //           Get.toNamed(AppRoutes.videoScreen);
+              //         },
+              //       ),
+              //       Episode(
+              //         epName: "Ep 3 - Lorem ipsum",
+              //         goTo: () {
+              //           Get.toNamed(AppRoutes.videoScreen);
+              //         },
+              //       ),
+              //     ],
+              //     options: CarouselOptions(
+              //         viewportFraction: 0.459.w,
+              //         padEnds: false,
+              //         enableInfiniteScroll: false,
+              //         aspectRatio: 2.9.w)),
               Header(
                 inverse: false,
                 title: "Similar Shows",
-                child: CarouselSlider(
-                    items: detailsController.recentList,
-                    options: CarouselOptions(
-                        aspectRatio: 1.7.w,
-                        viewportFraction: 0.442.w,
-                        enableInfiniteScroll: false,
-                        padEnds: false)),
+                child: SizedBox(
+                  height: 165.h,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (context, index) => Padding(
+                      padding: EdgeInsets.only(right: 8.0.w),
+                      child: detailsController.recentList[index],
+                    ),
+                    itemCount: detailsController.recentList.length,
+                  ),
+                ),
               ),
             ],
           ),

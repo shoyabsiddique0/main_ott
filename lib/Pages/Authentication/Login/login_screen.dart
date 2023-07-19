@@ -73,9 +73,10 @@ class LoginScreen extends StatelessWidget {
                               Get.toNamed(AppRoutes.forgotPasswordScreen);
                             },
                             child: Text(
-                              "Forgot Passowrd?",
+                              "Forgot Password?",
                               style: GoogleFonts.poppins(
                                   color: primaryColor,
+                                  fontSize: 13.w,
                                   fontWeight: FontWeight.w500,
                                   decoration: TextDecoration.underline),
                             )),

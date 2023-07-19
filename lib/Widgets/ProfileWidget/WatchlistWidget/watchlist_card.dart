@@ -79,7 +79,7 @@ class WatchlistCard extends StatelessWidget {
                           ),
                         ],
                       ),
-                      GestureDetector(
+                      InkWell(
                         onTap: () {
                           Get.bottomSheet(Container(
                             height: 130.h,
@@ -155,7 +155,8 @@ class WatchlistCard extends StatelessWidget {
                           ));
                         },
                         child: Container(
-                          padding: EdgeInsets.only(left: 30.w),
+                          padding: EdgeInsets.only(
+                              left: 10.w, right: 10.w, top: 10.h, bottom: 10.h),
                           child: SizedBox(
                             height: 14.h,
                             width: 12.w,

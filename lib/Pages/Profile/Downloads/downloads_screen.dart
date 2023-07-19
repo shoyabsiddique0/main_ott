@@ -73,8 +73,11 @@ class DownloadsScreen extends StatelessWidget {
                                 ),
                                 GestureDetector(
                                     onTap: () => Get.back(),
-                                    child: SvgPicture.asset(
-                                        "assets/HomeAssets/DetailsAssets/cross.svg"))
+                                    child: Padding(
+                                      padding: EdgeInsets.only(right: 10.w),
+                                      child: SvgPicture.asset(
+                                          "assets/HomeAssets/DetailsAssets/cross.svg"),
+                                    ))
                               ],
                             ),
                             SizedBox(
@@ -86,29 +89,28 @@ class DownloadsScreen extends StatelessWidget {
                               child: Column(
                                 children: controller.sort.map((element) {
                                   return GestureDetector(
-                                    onTap: () => controller.groupValue.value =
-                                        element["value"]!,
-                                    child: ListTile(
-                                      visualDensity:
-                                          const VisualDensity(vertical: -4),
-                                      leading: Text(
-                                        element["title"]!,
-                                        style: GoogleFonts.poppins(
-                                            color: whiteColor,
-                                            fontSize: 14.w,
-                                            fontWeight: FontWeight.w400),
-                                      ),
-                                      contentPadding: EdgeInsets.zero,
-                                      trailing: Radio(
+                                      onTap: () => controller.groupValue.value =
+                                          element["value"]!,
+                                      child: RadioListTile(
+                                        controlAffinity:
+                                            ListTileControlAffinity.trailing,
+                                        visualDensity:
+                                            const VisualDensity(vertical: -4),
+                                        title: Text(
+                                          element["title"]!,
+                                          style: GoogleFonts.poppins(
+                                              color: whiteColor,
+                                              fontSize: 14.w,
+                                              fontWeight: FontWeight.w400),
+                                        ),
+                                        contentPadding: EdgeInsets.zero,
                                         activeColor: primaryColor,
                                         groupValue: controller.groupValue.value,
                                         value: element["value"],
                                         onChanged: (value) => controller
                                             .groupValue
                                             .value = value.toString(),
-                                      ),
-                                    ),
-                                  );
+                                      ));
                                 }).toList(),
                               ),
                             ),

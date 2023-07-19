@@ -1,4 +1,3 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -109,35 +108,47 @@ class SearchScreen extends StatelessWidget {
                     Header(
                       inverse: false,
                       title: "Most Searched",
-                      child: CarouselSlider(
-                          items: searchController.trendingList,
-                          options: CarouselOptions(
-                              aspectRatio: 1.7.w,
-                              viewportFraction: 0.442.w,
-                              enableInfiniteScroll: false,
-                              padEnds: false)),
+                      child: SizedBox(
+                        height: 165.h,
+                        child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemBuilder: (context, index) => Padding(
+                            padding: EdgeInsets.only(right: 8.0.w),
+                            child: searchController.trendingList[index],
+                          ),
+                          itemCount: searchController.trendingList.length,
+                        ),
+                      ),
                     ),
                     Header(
                       inverse: false,
                       title: "Trending Now",
-                      child: CarouselSlider(
-                          items: searchController.trendingList,
-                          options: CarouselOptions(
-                              aspectRatio: 1.7.w,
-                              viewportFraction: 0.442.w,
-                              enableInfiniteScroll: false,
-                              padEnds: false)),
+                      child: SizedBox(
+                        height: 165.h,
+                        child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemBuilder: (context, index) => Padding(
+                            padding: EdgeInsets.only(right: 8.0.w),
+                            child: searchController.trendingList[index],
+                          ),
+                          itemCount: searchController.trendingList.length,
+                        ),
+                      ),
                     ),
                     Header(
                       inverse: false,
                       title: "Trending Now",
-                      child: CarouselSlider(
-                          items: searchController.trendingList,
-                          options: CarouselOptions(
-                              aspectRatio: 1.7.w,
-                              viewportFraction: 0.442.w,
-                              enableInfiniteScroll: false,
-                              padEnds: false)),
+                      child: SizedBox(
+                        height: 165.h,
+                        child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemBuilder: (context, index) => Padding(
+                            padding: EdgeInsets.only(right: 8.0.w),
+                            child: searchController.trendingList[index],
+                          ),
+                          itemCount: searchController.trendingList.length,
+                        ),
+                      ),
                     ),
                   ],
                 ),

@@ -40,30 +40,38 @@ class MoreByScreen extends StatelessWidget {
       ),
       body: Column(children: [
         Container(
-          height: 50.h,
-          margin:
-              EdgeInsets.only(top: 16.h, right: 24.w, left: 24.w, bottom: 20.h),
+          height: 45.h,
+          margin: EdgeInsets.only(left: 15.w),
           decoration: BoxDecoration(
-              color: whiteColor.withOpacity(0.25),
+              color: whiteColor.withOpacity(0.1),
               borderRadius: BorderRadius.all(Radius.circular(8.w))),
           child: TextFormField(
             expands: true,
             minLines: null,
             maxLines: null,
             decoration: InputDecoration(
+                contentPadding: EdgeInsets.zero,
                 isDense: true,
-                prefixIcon: SvgPicture.asset(
-                  "assets/NavBarAssets/search.svg",
-                  fit: BoxFit.scaleDown,
+                prefixIcon: Container(
+                  margin: EdgeInsets.only(
+                      left: 5.w, right: 5.w, top: 10.h, bottom: 10.h),
+                  child: SvgPicture.asset(
+                    "assets/NavBarAssets/search.svg",
+                    color: whiteColor.withOpacity(0.4),
+                    fit: BoxFit.scaleDown,
+                  ),
                 ),
                 hintText: "Search Here...",
                 hintStyle: GoogleFonts.poppins(
-                    color: whiteColor.withOpacity(0.5), fontSize: 18.w),
+                    color: whiteColor.withOpacity(0.5), fontSize: 14.w),
                 border: const OutlineInputBorder(),
                 focusedBorder: const OutlineInputBorder()),
             style: GoogleFonts.poppins(
-                color: whiteColor.withOpacity(0.5), fontSize: 18.w),
+                color: whiteColor.withOpacity(0.5), fontSize: 14.w),
           ),
+        ),
+        SizedBox(
+          height: 20.h,
         ),
         Expanded(
           child: Padding(
