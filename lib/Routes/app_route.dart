@@ -1,0 +1,34 @@
+class AppRoutes {
+  static const loginScreen = '/loginScreen';
+  static const registerScreen = '/registerScreen';
+  static const homeScreen = '/homeScreen';
+  static const categoryScreen = '/categoryScreen';
+  static const profileScreen = '/profileScreen';
+  static const searchScreeen = '/searchScreen';
+  static const bottomNavigationScreen = '/bottomNavigationScreen';
+  static const forgotPasswordScreen = '/forgotPasswordScreen';
+  static const otpScreen = '/otpScreen';
+  static const accountSetting = '/accountSetting';
+  static const subscriptionScreen = '/subscriptionScreen';
+  static const manageProfileScreen = '/manageProfileScreen';
+  static const detailsScreen = '/detailsScreen';
+  static const videoScreen = '/videoScreen';
+  static const landscapeScreen = '/landscapeScreen';
+  static const watchlistScreen = '/watchlistScreen';
+  static const downloadsScreen = '/downloadsScreen';
+  static const moreByScreen = '/moreByScreen';
+  static const changePasswordScreen = '/changePasswordScreen';
+  static const profileManageScreen = '/profileManageScreen';
+  static const viewAllScreen = '/viewAllScreen';
+  static const contactUsScreen = '/contactUsScreen';
+  static const termsAndCOnditionScreen = '/termsAndCOnditionScreen';
+  static const refundPolicyScreen = '/refundPolicyScreen';
+  static const policyScreen = '/policyScreen';
+  static const privacyScreen = '/privacyScreen';
+  static const cancellationScreen = '/cancellationScreen';
+  static const continueWatchingScreen = '/continueWatchingScreen';
+  static const aboutUsScreen = '/aboutUsScreen';
+  static const updatePasswordScreen = '/updatePasswordScreen';
+  static const splashScreen = '/splashScreen';
+  static const categoryVideoListingScreen = '/categoryVideoListingScreen';
+}
